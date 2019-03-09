@@ -1,0 +1,62 @@
+<view class="content">
+    <map showLocation bindcontroltap="controltap" bindmarkertap="markertap" circles="{{circles}}" controls="{{controls}}" data="{{mapData}}" id="map" includePoints="{{includePoints}} " latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" polyline="{{polyline}}" scale="{{scale}}" style="width: 100%; height:calc(100% - 49px)"></map>
+    <view class="am-top-tabs" style="background:#fff;height:49px;white-space: nowrap;">
+        <scroll-view class="am-scroll-view_H" scrollIntoView="{{toView}}" scrollTop="{{scrollTop}}" scrollX="true" style="width: 100%;white-space: nowrap; display: flex;overflow:hidden">
+            <view style="width:30%;display:inline-block;margin-top:22rpx" wx:for="{{menueList}}" wx:key="{{item.index}}">
+                <view bindtap="handleTabClick" class="am-tabs-bar-tab {{chooseTab==item.id?'active-tab':''}}" data-id="{{item.mapMarkTypeId}}" data-index="{{index}}" key="tabs-item-{{index}}">
+                    <view class="icon-img">
+                        <image class="icon-url-img" src="{{item.selectedUrl}}" wx:if="{{chooseTab==item.id}}"></image>
+                        <image class="icon-url-img" src="{{item.defaultUrl}}" wx:else></image>
+                    </view>
+                    <view class="am-tabs-bar-title icon-desc {{idActive==item.id?'actived':'color'}}">
+                        <view>{{item.mapMarkTypeName}}</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <cover-view bindtap="hideModal" class="modal-mask" wx:if="{{showCard}}"></cover-view>
+    <cover-view class="modal-dialog" wx:if="{{showCard}}">
+        <cover-view class="modal-content">
+            <cover-view class="cover-layout-content">
+                <cover-view class="layout-left">
+                    <cover-image class="cover-img" src="{{cardItem.mapMarkPictureUrl}}"></cover-image>
+                </cover-view>
+                <cover-view class="cover-layout ">
+                    <cover-view class="cover-name" data-id="{{cardItem.mapMarkRichTextUrl}}">
+          {{cardItem.mapMarkName}}
+          <cover-image bindtap="scenicDetail" class="cover-name-img" data-id="{{cardItem.mapMarkRichTextUrl}}" data-title="{{cardItem.mapMarkName}}" src="../../images/right-1.png" wx:if="{{cardItem.mapMarkRichTextEnable}}"></cover-image>
+                    </cover-view>
+                    <cover-view class="cover-time">营业时间：{{cardItem.mapMarkOpenTime}}</cover-view>
+                    <cover-view bindtap="showMore" class="cover-desc" wx:if="{{showMore}}">
+                        <cover-view style="white-space:normal">{{cardItem.desc}}</cover-view>
+                        <cover-view class="cover-blue" wx:if="{{cardItem.mapMarkDescription.length>26}}">更多</cover-view>
+                    </cover-view>
+                    <cover-view bindtap="showLess" wx:else>
+                        <cover-view class="cover-desc">{{cardItem.mapMarkDescription}}</cover-view>
+                    </cover-view>
+                </cover-view>
+            </cover-view>
+            <cover-view class="cover-audio-title">
+                <cover-view class="cover-audio left" wx:if="{{cardItem.mapMarkAudioUrl}}">
+                    <cover-view bindtap="playAudio" style="line-height:56rpx;height:56rpx">
+                        <cover-image class="pause-img" src="{{cardItem.playMP3}}" wx:if="{{flag}}"></cover-image>
+                        <cover-image class="pause-img" src="{{cardItem.pauseMP3}}" wx:else></cover-image>
+                        <cover-view class="pause-item" style="display:inline-block;text-align:center;padding-top:6px;line-height:auto">语音</cover-view>
+                    </cover-view>
+                </cover-view>
+                <cover-view class="cover-audio left" style="border-color:#CCCCCC" wx:else>
+                    <cover-image class="pause-img" src="../../images/map/pause-disable.png"></cover-image>
+                    <cover-view class="pause-item" style="display:inline-block;text-align:center;padding-top:6px;line-height:auto;color:#CCCCCC">语音</cover-view>
+                </cover-view>
+                <cover-view bindtap="tap" class="cover-audio">
+                    <cover-image class="pause-img" src="../../images/map/gohere.png" style="padding-right:8rpx"></cover-image>
+                    <cover-view style="display:inline-block;text-align:center;padding-top:6px;line-height:auto">  到这去</cover-view>
+                </cover-view>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-view bindtap="cancelModal" class="cancel-modal" wx:if="{{cancelModal}}">
+        <cover-view class="cancel-title">取消路线</cover-view>
+    </cover-view>
+</view>

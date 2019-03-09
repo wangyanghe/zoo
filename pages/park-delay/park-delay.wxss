@@ -1,0 +1,68 @@
+.park-delay {
+    width: 474rpx;
+    height: 577rpx;
+    background: #FFFFFF;
+    border-radius: 20rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -237rpx;
+    margin-top: -338.5rpx;
+}
+
+.park-all {
+    width: 100%;
+}
+
+page {
+    background: #F2F2F2;
+}
+
+.park-delay-status {
+    font-size: 20rpx;
+    color: #333;
+    font-weight: bold;
+    font-family: Noto SansCJK;
+    margin-top: 18rpx;
+    text-align: center;
+    margin-bottom: 60rpx;
+}
+
+.park-delay-title,.park-delay-list {
+    font-size: 26rpx;
+    margin: 0 auto;
+    font-family: Noto SansCJK;
+    font-weight: bold;
+    text-align: center;
+}
+
+.park-delay-color {
+    color: #3399FF;
+}
+
+.park-delay-image {
+    width: 100%;
+    text-align: center;
+    margin-top: 52rpx;
+}
+
+.park-delay-img {
+    width: 165rpx;
+    height: 148rpx;
+    background-size: 100%;
+}
+
+.park-delay-list {
+    margin-top: 30rpx;
+    margin-bottom: 76rpx;
+}
+
+.park-delay-btn {
+    width: 136rpx;
+    height: 48rpx;
+    border: 1rpx solid #3399FF;
+    border-radius: 24rpx;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 48rpx;
+}

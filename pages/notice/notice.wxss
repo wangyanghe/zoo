@@ -1,0 +1,92 @@
+page {
+    background: #fff;
+}
+
+.notice-content {
+    padding: 29rpx 28rpx 28rpx 30rpx;
+    background: #fff;
+    width: 100%;
+}
+
+.notice-list-img {
+    border-bottom: 1rpx solid #EEEEEE;
+    margin-bottom: 30rpx;
+    box-shadow: 0rpx 8rpx 15rpx 0rpx rgba(190,190,190,0.15);
+}
+
+.notice-zoo-details {
+    font-size: 22rpx;
+    color: #999;
+    font-weight: bold;
+    line-height: 34rpx;
+    margin-bottom: 29rpx;
+}
+
+.notice-img {
+    width: 100%;
+    height: 345rpx;
+}
+
+.notice-left-img {
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+}
+
+.zoo-panda {
+    flex: 1;
+    color: #666;
+}
+
+.notice-map {
+    background-size: contain;
+    width: 52rpx;
+    height: 80rpx;
+}
+
+.notice-zoo-position {
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.notice-zoo-name {
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #3399FF;
+    display: flex;
+}
+
+.notice-zoo-item {
+    padding-top: 30rpx;
+    padding-bottom: 22rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.notice-content-name {
+}
+
+.notice-zoo-list {
+    padding-right: 24rpx;
+    display: inline-flex;
+}
+
+.notice-zoo-time {
+    color: #F97FB8;
+    margin-top: 20rpx;
+    margin-bottom: 28rpx;
+}
+
+.zoo-time-list {
+    border-radius: 0.03rem;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 2px;
+    color: #666666;
+    padding-left: 0.2rem;
+    font-size: 24rpx;
+    font-family: SourceHanSansCN-Normal;
+    font-weight: 400;
+}

@@ -1,0 +1,250 @@
+<view class="index-list">
+    <view class="index-right">
+        <view class="right-list-item ">
+            <view class="tourism">
+                <view>
+                    <view class="swiper-list">
+                        <swiper autoplay="true" circular="{{true}}" class="swiper" current="{{current}}" duration="300" indicatorDots="{{indicatorDots}}" interval="{{interval}}" nextMargin="30rpx" onChange="changeimage" previousMargin="30rpx">
+                            <swiper-item style="box-sizing:border-box;padding:0 10rpx;" wx:for="{{images}}" wx:key="{{item.index}}">
+                                <image bindtap="clickSwiper" class="swiper-imgaes-list " data-linktype="{{item.linkType}}" data-title="{{item.title}}" data-url="{{item.link}}" height="150" src="{{item.url}}" width="355"></image>
+                            </swiper-item>
+                        </swiper>
+                    </view>
+                </view>
+                <view class="introduce">
+                    <view bindtap="scenic" class="introduce-content">
+                        <view class="introduce-title">
+                            <image mode="widthFix" src="../../images/trans.png" style="width:118rpx;height:24rpx !important;padding-right:20rpx;"></image>
+                        </view>
+                        <view class="introduce-list">
+                            <image class="introduce-list-images" mode="" src="../../images/right.png"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="total-positon">
+                    <view class="effect-btn">
+                        <view class="effect-icons">
+                            <view class="icon-content">
+                                <view class="icon {{appLen==2?'S':appLen==3?'T':appLen==4?'F':appLen==8?'F':appLen==6?'F':appLen==7?'F':'five'}}" wx:for="{{applications}}" wx:key="{{item.id}}">
+                                    <view bindtap="moreTicketInfo" data-functionId="{{item.functionId}}" data-id="{{item.link}}" data-linktype="{{item.linkType}}" data-name="{{item.name}}">
+                                        <view class="icon-img">
+                                            <image class="icon-img-content" mode="" src="{{item.imageUrl}}"></image>
+                                        </view>
+                                        <view class="icon-desc">
+                                            <text>{{item.name}}</text>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="notice">
+                    <view bindtap="notice" class="notice-content" id="blue">
+                        <view>
+                            <view style="width:67rpx;height:30rpx !important;padding-right:30rpx;border-right:1rpx solid #EDEDED;margin-right:36rpx;">
+                                <image mode="widthFix" src="../../images/notice-index.png" style="width:67rpx;height:30rpx !important;padding-right:30rpx;border-right:1rpx solid #EDEDED;margin-right:36rpx;"></image>
+                            </view>
+                        </view>
+                        <view class="notice-list">
+                            <view style="margin-top:-{{marginTop}}rpx">
+                                <view class="notice-list-height" wx:for="{{notice}}" wx:key="{{item.id}}">
+                                    <text>{{item.contents}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="buy">
+                    <view class="buy-content">
+                        <view class="buy-header">
+                            <view class="buy-ticket">
+                                <image class="line-border" mode="" src="../../images/line-border.png"></image>
+                                <text>购票</text>
+                            </view>
+                            <view bindtap="moreTicket" class="buy-ticket-more">
+                                <view>
+                                    <text class="more-in text"> 更多 </text>
+                                    <image class="buy-ticket-img more-in" mode="widthFix" src="../../images/right.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="buy-lists-ticket">
+                            <view wx:for="{{tickets}}" wx:key="{{item.ticketInfoId}}">
+                                <view class="lists-ticket-content">
+                                    <view catchtap="show" class="buy-images" data-id="{{item.ticketInfoId}}">
+                                        <image class="zoo-images" mode="" src="{{item.pictureUrl}}"></image>
+                                    </view>
+                                    <view class="index-ticket">
+                                        <view catchtap="show" class="buy-ticket-name" data-id="{{item.ticketInfoId}}">
+                                                        {{item.ticketName}}
+                                                    </view>
+                                        <view style="display:flex;">
+                                            <view style="flex:1">
+                                                <view catchtap="show" class="buy-ticket-price" data-id="{{item.ticketInfoId}}" data-money="{{item.platformPrice}}" data-name="{{item.ticketName}}" style="width:200rpx;">
+                                                    <view style="display:inline-block;padding-right:20rpx;"> 购买须知</view>
+                                                    <view class="notice-desc" style="display:inline-block">
+                                                        <image class="notice-desc-images" mode="" src="../../images/right-1.png"></image>
+                                                    </view>
+                                                </view>
+                                                <view catchtap="show" class="ticket-content" data-id="{{item.ticketInfoId}}">
+                                                    <view style="font-size:20rpx;display:inline-flex;">￥</view>
+                                                    <view style="font-family:SourceHanSansCN-Bold;font-size:36rpx;font-weight:bold;display:inline-flex">
+                                                                {{item.platformPrice}}</view>
+                                                </view>
+                                            </view>
+                                            <view bindtap="toPay" class="ticket-staus" data-id="{{item.ticketInfoId}}" data-idcard="{{item.idCardEnabled}}" data-idname="{{item.usernameEnabled}}" data-ids="{{item.ticketInfoId}}" data-name="{{item.ticketName}}" data-phonenum="{{item.phoneNumberEnabled}}">
+                                                        
+                                                          购买
+                                                        </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="component">
+                    <view> 杭州快盈信息科技有限公司提供技术支持</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="conceal" class="model-delog home" wx:if="{{flag==1}}">
+        <view class="model-title">
+            <view class="model-open">
+                <view bindtap="conceal" class="model-notice ">
+                    <text>购买须知</text>
+                    <image bindtap="conceal" class="notice-clear" src="../../images/clear.png"></image>
+                </view>
+                <view class="modal-list">
+                    <view>
+                        <form>
+                            <view class=" notice-list">
+                                <view class="txtys">
+                                    <text class="notice-title">预定说明</text>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details">预定时间:</text>
+                                    <view>{{zhihuijingquAppletBuyTicketNotice.noteOrderTime}}</view>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details">有效期:</text>
+                                    <view>{{zhihuijingquAppletBuyTicketNotice.noteValidTime}}</view>
+                                </view>
+                            </view>
+                            <view class=" notice-list">
+                                <view class="txtys">
+                                    <text class="notice-title">费用说明</text>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details">费用包含:</text>
+                                    <view>{{zhihuijingquAppletBuyTicketNotice.noteCostContain}}</view>
+                                </view>
+                            </view>
+                            <view class=" notice-list">
+                                <view class="txtys">
+                                    <text class="notice-title">使用说明</text>
+                                </view>
+                                <view class="info-titles ">
+                                    <text class="notice-details">使用方法:</text>
+                                    <view>{{zhihuijingquAppletBuyTicketNotice.noteUsageMethod}}</view>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details"> 入园时间:</text>
+                                    <view>{{zhihuijingquAppletBuyTicketNotice.noteStartTime}}--{{zhihuijingquAppletBuyTicketNotice.noteEndTime}}</view>
+                                </view>
+                            </view>
+                            <view class=" notice-list type">
+                                <view class="txtys">
+                                    <text class="notice-title ">退改规则</text>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details info-line">费用包含:</text>
+                                    <view class="info-line">{{zhihuijingquAppletBuyTicketNotice.noteRefundRule}}</view>
+                                </view>
+                            </view>
+                        </form>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="noticeConceal" class="notice-dialog" wx:if="{{noticeShow==1}}">
+        <view bindtap="noticeConceal" class="dialog-notic-list">
+            <view class="notice-title-dialog" style="display:flex;justify-content:center;align-items:center">
+                <view style="flex:1">
+                    <image class="line-border" mode="" src="../../images/line-border.png"></image>
+                    <text style="font-size:34rpx;font-family:SourceHanSansCN-Bold;font-weight:bold;color:#262626">公告</text>
+                    <image class="line-border right" mode="" src="../../images/line-border.png"></image>
+                </view>
+                <image class="notice-clear" src="../../images/clear.png"></image>
+            </view>
+            <view class="header-top">
+                <view class="items-notice-list" wx:for="{{noticeShowList}}" wx:key="{{item.orderId}}">
+                    <text style="font-size:32rpx;font-family:SourceHanSansCN-Medium;font-weight:500;color:#333333">{{item.orderId}}. </text>
+                    <text class="text-color">{{item.contents}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="mask-layer" wx:if="{{couponIsShow}}">
+        <view class="coupon-dialog">
+            <view class="coupon-img">
+                <image class="coupon" mode="" src="../../images/coupon.png"></image>
+            </view>
+            <view class="coupon-detalis">
+                <view class="coupon-first" wx:if="{{index==0}}" wx:for="{{passListModelList}}" wx:key="index">
+                    <image mode="" src="../../images/coupon-one.png"></image>
+                    <view class="price">
+                        <view>
+                            <view>￥</view>
+                            <text>{{item.passAmount}}</text>
+                        </view>
+                        <text>{{item.useNotice}}</text>
+                    </view>
+                    <view class="detalis">
+                        <view class="good-img">
+                            <image class="detalis-good-img" mode="" src="{{item.passPictureUrl}}"></image>
+                        </view>
+                        <view class="good-text">
+                            <view>{{item.passName}}</view>
+                            <view>
+                                <text>{{item.validTime}}</text>
+                                <view bindtap="receiveCoupon" class="receive-btn" data-id="{{item.passId}}">立即领取</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="coupon-other" wx:if="{{index!=0}}" wx:for="{{passListModelList}}" wx:key="index">
+                    <image mode="" src="../../images/coupon-two.png"></image>
+                    <view class="price">
+                        <view>
+                            <view>￥</view>
+                            <text>{{item.passAmount}}</text>
+                        </view>
+                        <text>{{item.useNotice}}</text>
+                    </view>
+                    <view class="detalis">
+                        <view class="good-img">
+                            <image class="detalis-good-img" mode="" src="{{item.passPictureUrl}}"></image>
+                        </view>
+                        <view class="good-text">
+                            <view>{{item.passName}}</view>
+                            <view>
+                                <text>{{item.validTime}}</text>
+                                <view bindtap="receiveCoupon" class="receive-btn" data-id="{{item.passId}}">立即领取</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="coupon-bottom">
+          领取后可在【支付宝】-【卡包】中查看使用
+        </view>
+            <view bindtap="clearCoupon" class="coupon-clear-btn">
+                <image mode="" src="../../images/clear.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

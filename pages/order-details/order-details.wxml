@@ -1,0 +1,266 @@
+<view class="pages-all">
+    <view>
+        <view class="order-all">
+            <view class="OD-title" style="position:relative">
+                <view class="OD-status">{{status}}</view>
+                <view class="OD-time">
+                    <text wx:if="{{code==0}}">{{secondH}}</text>
+                    <text>{{desc}}</text>
+                </view>
+                <image class="details-image-img" src="/images/order-title.png"></image>
+            </view>
+            <view class="auth-go" wx:if="{{authShow&&checkType=='order'}}">
+                <view class="auth-go-header">
+                {{orderModel.ticketName}}
+                </view>
+                <view class="auth-go-img">
+                    <view class="auth-code" wx:if="{{checkCode}}">{{checkCode}}</view>
+                    <view wx:if="{{checkQrcodeUrl}}">
+                        <image class="auth-images" src="{{checkQrcodeUrl}}"></image>
+                    </view>
+                </view>
+                <view class="auth-tickck-num">请凭二维码或核销编号检票</view>
+            </view>
+            <view class="auth-go" wx:if="{{authShowTicket&&checkType=='ticket'}}">
+                <view class="auth-go-header">{{orderModel.ticketName}}</view>
+                <view class="QR-code">
+                    <view bindtap="lastBtn" class="left" wx:if="{{nowPage!=0}}">
+                        <image class="next left-list" mode="widthFix" src="../../images/right-1.png"></image>
+                    </view>
+                    <view class="left" wx:else></view>
+                    <view class="swiper-div">
+                        <view wx:for="{{ticketOrderGoodsQrcodeList}}" wx:key="{{index}}">
+                            <view class="auth-code" wx:if="{{nowPage==index}}">{{item.checkCode}}</view>
+                        </view>
+                        <swiper autoplay="{{autoplay}}" bindchange="changeCurrent" class="swiper-module" current="{{current}}" displayMultipleItems="1" duration="{{duration}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+                            <swiper-item wx:for="{{ticketOrderGoodsQrcodeList}}" wx:key="{{index}}">
+                                <image class="slide-image" height="150" src="{{item.checkQrcodeUrl}}" width="355"></image>
+                            </swiper-item>
+                        </swiper>
+                        <view style="text-align: center;font-size: 26rpx;">{{nowPage+1}}/{{PagesLen}}</view>
+                        <view class="auth-tickck-num">请凭二维码或核销编号检票入园</view>
+                    </view>
+                    <view bindtap="nextBtn" class=" right" wx:if="{{nowPage!=PagesLen-1}}">
+                        <image class="next right-list" mode="widthFix" src="../../images/right-1.png"></image>
+                    </view>
+                    <view class="right" wx:else></view>
+                </view>
+            </view>
+            <view class="OD-ticketDetails">
+                <view wx:if="{{ticketOrderGoodsList[0].ticketModel}}">
+                    <view class="OD-TD-tit" wx:if="{{ticketOrderGoodsList[0].ticketModel=='MP'}}">门票信息</view>
+                    <view class="OD-TD-tit packages" wx:if="{{ticketOrderGoodsList[0].ticketModel=='TP'}}">套票订单</view>
+                </view>
+                <view class="OD-TD-tit" wx:else>
+              门票信息
+          </view>
+                <view class="OD-TD-conter">
+                    <view wx:if="{{ticketOrderGoodsList[0].ticketModel=='TP'}}">
+                        <view class="packages-header">{{ticketOrderGoodsList[0].ticketName}}</view>
+                        <view class="packages-body">
+                            <view class="packages-content" wx:for="{{ticketOrderGoodsList[0].orderGoodsCombinationList}}" wx:key="{{index}}">
+                                <view class="content-first">
+                                    <view class="content-name">{{item.combinationTicketName}}</view>
+                                    <view class="content-title">
+                                        <view class="content-info">
+                                            <view class="content-buy">
+                                                <text class="shopping">购</text>
+                                                <text>{{item.buyCount}}</text>
+                                            </view>
+                                            <view class="content-buy">
+                                                <text class="shopping">检</text>
+                                                <text>{{item.checkCount}}</text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view>
+                        <view wx:if="{{ticketOrderGoodsList[0].ticketModel}}">
+                            <view class="OD-TD-ticketname" wx:if="{{ticketOrderGoodsList[0].ticketModel=='MP'}}">{{orderModel.ticketName}}</view>
+                        </view>
+                        <view class="OD-TD-ticketname" wx:else>{{orderModel.ticketName}}</view>
+                        <view class="OD-TD-ul">
+                            <view class="OD-TD-li">
+                                <text class="OD-TD-li-tit">使用日期 ：</text>
+                                <text class="OD-TD-li-detail">{{orderModel.playDate}}</text>
+                            </view>
+                            <view class="OD-TD-li">
+                                <text class="OD-TD-li-tit">购买数量 ：</text>
+                                <text class="OD-TD-li-detail" style="color:#3399ff;">{{orderModel.totalTicketCount}}</text>
+                            </view>
+                            <view class="OD-TD-li">
+                                <text class="OD-TD-li-tit">使用方法 ：</text>
+                                <text class="OD-TD-li-detail" wx:if="{{orderModel.noteUsageMethod}}">{{orderModel.noteUsageMethod}}</text>
+                                <text class="OD-TD-li-detail" wx:else></text>
+                            </view>
+                            <view class="OD-TD-li">
+                                <text class="OD-TD-li-tit">入园时间 ：</text>
+                                <text class="OD-TD-li-detail" wx:if="{{orderModel.noteStartTime}}">{{orderModel.noteStartTime}}-{{orderModel.noteEndTime}}</text>
+                                <text class="OD-TD-li-detail" wx:else></text>
+                            </view>
+                        </view>
+                    </view>
+                    <view>
+                        <view bindtap="refundRuleBtn" class="OD-TD-regressionRule">
+                            <view style="display:inline-block">退改规则 </view>
+                            <view style="display:inline-block" wx:if="{{refundRuleBooler==true}}">
+                                <image class="up down" mode="" src="../../images/up.png"></image>
+                            </view>
+                            <view style="display:inline-block" wx:if="{{refundRuleBooler==false}}">
+                                <image class="down" mode="" src="../../images/down.png"></image>
+                            </view>
+                        </view>
+                        <view class="OD-TD-rRconter" wx:if="{{refundRuleBooler==true}}">
+                            {{orderModel.noteRefundRule}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="OD-bookingInformation" wx:if="{{showAllEnabled}}">
+                <view class="OD-BI-tit">订票信息</view>
+                <view class="OD-BI-center">
+                    <view class="OD-BI-li" wx:if="{{orderModel.usernameEnabled==1}}">
+                        <text class="OD-BI-li-tit">姓名</text>
+                        <text class="OD-BI-li-conter">{{orderModel.buyerUsername}}</text>
+                    </view>
+                    <view class="OD-BI-li" wx:if="{{orderModel.phoneNumberEnabled==1}}">
+                        <text class="OD-BI-li-tit">联系人</text>
+                        <text class="OD-BI-li-conter">{{orderModel.buyerPhoneNumber}}</text>
+                    </view>
+                    <view class="OD-BI-li" wx:if="{{orderModel.idCardEnabled==1}}">
+                        <text class="OD-BI-li-tit">身份证</text>
+                        <text class="OD-BI-li-conter">{{orderModel.buyerCertificateCode}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="OD-orderInformation">
+                <view class="OD-OI-tit">订单信息</view>
+                <view class="OD-OI-li">
+                    <text class="OD-OI-li-tit">订单编号</text>
+                    <text class="OD-OI-li-conter">{{orderModel.ticketOrderNumber}}</text>
+                </view>
+                <view class="OD-OI-li">
+                    <text class="OD-OI-li-tit">下单时间</text>
+                    <text class="OD-OI-li-conter">{{orderModel.createTime}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="PD-footerDiv">
+            <image class="PD-customerService" src="/images/customerService.png"></image>
+            <view class="PD-FD-amount">
+                <text class="amount-tit">
+                    <text wx:if="{{code==0}}">金额</text>
+                    <text wx:elif="{{code==6}}">退款金额</text>
+                    <text wx:else>付款金额</text>
+                </text>
+                <text class="amount-number">
+                    <text wx:if="{{code==6}}">
+                        {{orderModel.refundAmount}}
+                       
+                    </text>
+                    <text wx:else> ￥{{orderModel.amount}}</text>
+                </text>
+            </view>
+            <view class="order-details-show">
+                <view bindtap="detailsBtn" class="PD-FD-details" data-showid="1">明细
+                <image class="up-allow-img" src="../../images/up.png"></image>
+                </view>
+                <view>
+                    <view>
+                        <view class="footer-details orders {{detailsBooler?'active-detial':''}}" wx:if="{{code==7}}">
+                            <view class="list-detail ">
+                                <view class="LD-tit">费用明细</view>
+                                <view class="LD-li">
+                                    <text class="LD-liName"> 付款金额</text>
+                                    <text class="LD-liNumber">￥{{orderModel.amount}}</text>
+                                </view>
+                                <view class="LD-li">
+                                    <text class="LD-liName">退款金额</text>
+                                    <text class="LD-liNumber">￥{{orderModel.refundAmount}} </text>
+                                </view>
+                                <view class="LD-li">
+                                    <text class="LD-liName">手续费</text>
+                                    <text class="LD-liNumber">{{orderModel.poundageAmount}} </text>
+                                </view>
+                            </view>
+                            <view class="LD-footer">退款金额:￥{{orderModel.refundAmount}}</view>
+                        </view>
+                        <view class="footer-details  {{detailsBooler?'active-detial':''}}" wx:else>
+                            <view class="list-detail">
+                                <view class="LD-tit">费用明细</view>
+                                <view class="LD-li">
+                                    <text class="LD-liName"> {{orderModel.ticketName}}</text>
+                                    <text class="LD-liNumber">￥{{orderModel.platformPrice}}</text>
+                                </view>
+                                <view class="LD-li">
+                                    <text class="LD-liName">数量</text>
+                                    <text class="LD-liNumber">{{orderModel.ticketCount}} </text>
+                                </view>
+                            </view>
+                            <view class="LD-footer">订单总额:￥{{orderModel.amount}}
+                              
+                          </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="OD-footer-right">
+                <view wx:if="{{code==0}}">
+                    <view bindtap="continu" class="OD-FR-btn OD-FR-orange" data-id="{{orderModel.ticketOrderId}}" wx:if="{{isCanPay}}">
+                        <text class="btn-groups"> 继续支付 </text>
+                    </view>
+                    <view class="OD-FR-btn OD-FR-orange" wx:else>
+                        <text class="btn-groups"> 支付中 </text>
+                    </view>
+                    <view bindtap="openCancel" class="OD-FR-btn">
+                        <text class="btn-groups"> 取消订单 </text>
+                    </view>
+                </view>
+                <view bindtap="openBuyCancel" class="OD-FR-btn" wx:if="{{showRefundEnabledList}}">
+                    <text class="btn-groups"> 取消购票 </text>
+                </view>
+                <view bindtap="openRefund" class="OD-FR-btn" wx:if="{{showRefundEnabled}}">
+                    <text class="btn-groups"> 申请退票 </text>
+                </view>
+                <view bindtap="openAuthCancel" class="OD-FR-btn" wx:if="{{code==6}}">
+                    <text class="btn-groups"> 取消申请 </text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="second-diaolg" wx:if="{{secondDiaolg||buyCancel||refundShow||authCancel}}">
+        <view class="second-title">
+            <view class="second-header">
+                <text>是否确认</text>
+                <text wx:if="{{code==0}}">取消订单</text>
+                <text wx:if="{{code==1}}">取消购票</text>
+                <text wx:if="{{code==2}}">退票</text>
+                <text wx:if="{{code==6}}">取消申请</text>
+            </view>
+            <view class="second-btns">
+                <view bindtap="secondBack" class="second-save">返回</view>
+                <view bindtap="cancel" class="second-save" wx:if="{{code==0&&isCanPlay}}"> 确定</view>
+                <view bindtap="buyCancel" class="second-save" wx:elif="{{code==1&&isCanPlay}}"> 确定</view>
+                <view bindtap="refund" class="second-save" wx:elif="{{code==2&&isCanPlay}}"> 确定</view>
+                <view bindtap="authCancel" class="second-save" wx:elif="{{code==6&&isCanPlay}}"> 确定</view>
+                <view class="second-save" wx:else> 审核中</view>
+            </view>
+        </view>
+    </view>
+    <view class="pay-diaolg" wx:if="{{payShow}}">
+        <view class="pay-title">
+            <view class="pay-header">
+                <text>
+                            {{buySuccessMessage}}
+
+                        </text>
+            </view>
+            <view class="second-btns pay">
+                <view bindtap="payBack" class="second-save">确定</view>
+            </view>
+        </view>
+    </view>
+</view>

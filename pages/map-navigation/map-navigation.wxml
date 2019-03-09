@@ -1,0 +1,33 @@
+<view class="pages">
+    <view class="scenic-title">
+        <view class="scenic-title-name">{{mapMark.mapMarkName}}</view>
+        <view class="scenic-title-offLab" wx:for="{{mapMark.officialLabel}}" wx:key="{{index}}">{{item}}</view>
+    </view>
+    <view class="scenic-lab" wx:if="{{mapMark.label.length>0}}">
+        <view wx:for="{{mapMark.label}}" wx:key="{{index}}">{{item}}</view>
+    </view>
+    <view class="scenic-detaile">
+        <view wx:if="{{mapMark.mapMarkOpenTime}}">
+            <view class="scenic-detaile-tit">营业时间：</view>
+            <view class="scenic-detaile-conter">{{mapMark.mapMarkOpenTime}}</view>
+        </view>
+        <view wx:if="{{mapMark.suggestPlay}}">
+            <view class="scenic-detaile-tit">游玩建议：</view>
+            <view class="scenic-detaile-conter">{{mapMark.suggestPlay}}</view>
+        </view>
+        <view wx:if="{{mapMark.suggestPay}}">
+            <view class="scenic-detaile-tit">消费参考：</view>
+            <view class="scenic-detaile-conter">{{mapMark.suggestPay}}</view>
+        </view>
+        <view wx:if="{{mapMark.address}}">
+            <view class="scenic-detaile-tit">景点地址：</view>
+            <view class="scenic-detaile-conter">{{mapMark.address}}</view>
+        </view>
+    </view>
+    <view class="scenic-introduction" wx:if="{{mapMark.mapMarkDescription}}">
+    {{mapMark.mapMarkDescription}}
+  </view>
+    <view class="scenic-imgs" wx:for="{{mapMark.pictureUrl}}" wx:key="{{index}}">
+        <image mode="scaleToFill" src="{{item}}"></image>
+    </view>
+</view>

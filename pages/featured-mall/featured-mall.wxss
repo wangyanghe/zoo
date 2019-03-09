@@ -1,0 +1,95 @@
+page {
+    width: 100%;
+    background: #F2F2F2;
+}
+
+.mall {
+    width: 100%;
+    display: flex;
+}
+
+.mall-left {
+    width: 169rpx;
+    height: 100%;
+}
+
+.mall-right {
+    flex: 1;
+    height: 100%;
+    padding: 0 30rpx;
+    background: #fff;
+}
+
+.top-order {
+    padding: 10rpx 0;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    font-size: 28rpx;
+    font-family: SourceHanSansCN-Medium;
+    font-weight: 500;
+    color: #666666;
+}
+
+.top-right {
+    background: #fff;
+    display: none;
+}
+
+.top-right.active {
+    display: block;
+}
+
+.top-order.active {
+    background: #fff;
+    border-left: 9rpx solid #FF9933;
+    color: #333333;
+}
+
+.right-list {
+    display: flex;
+    margin-top: 50rpx;
+}
+
+.img-width,.list-img {
+    width: 134rpx;
+    height: 134rpx;
+    border-radius: 10rpx;
+}
+
+.list-title {
+    flex: 1;
+    margin-left: 30rpx;
+}
+
+.list-name {
+    font-size: 30rpx;
+    font-family: SourceHanSansCN-Medium;
+    font-weight: 500;
+    color: #333333;
+    line-height: 40rpx;
+    margin-bottom: 30rpx;
+}
+
+.list-price {
+    display: flex;
+}
+
+.price-num {
+    font-size: 24rpx;
+    font-family: SIL-Hei-Med-Jian;
+    font-weight: bold;
+    height: 23rpx;
+    line-height: 23rpx;
+    color: #FF3300;
+    width: 200rpx;
+}
+
+.price-sale {
+    font-size: 20rpx;
+    font-family: SourceHanSansCN-Regular;
+    font-weight: 400;
+    color: #999999;
+    flex: 1;
+    text-align: right;
+}

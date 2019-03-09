@@ -1,0 +1,3 @@
+<view class="scenic">
+    <web-view src="{{descriptionUrl}}"></web-view>
+</view>

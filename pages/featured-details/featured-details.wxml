@@ -1,0 +1,66 @@
+<view class="goods">
+    <view class="goods-list">
+        <view class="goods-img">
+            <view class="swiper-list">
+                <swiper autoplay="{{true}}" circular="{{true}}" class="swiper" current="{{current}}" duration="300" indicatorDots="{{indicatorDots}}" interval="{{interval}}" onChange="changeimage">
+                    <swiper-item class="swiper-bg" wx:for="{{goodsPictureList}}" wx:key="{{index}}">
+                        <view class="swiper-item " data-linktype="{{item.linkType}}" data-title="{{item.title}}" data-url="{{item.link}}">
+                            <view data-id="{{index}}" data-url="{{item.link}}">
+                                <image class="swiper-imgaes-list" mode="widthFix" src="{{item.url}}"></image>
+                            </view>
+                        </view>
+                    </swiper-item>
+                </swiper>
+            </view>
+            <view class="swiper-list-bg"></view>
+        </view>
+        <view class="goods-des">
+         {{goodsName}}
+        </view>
+        <view class="goods-price">
+            <view class="price-num">￥{{goodsPrice}}</view>
+            <view class="price-total">
+                <text class="total-header">已售</text>
+           {{saleCount}}
+          </view>
+        </view>
+        <view class="goods-express">
+            <view class="express-list">
+                <image class="express" mode="widthFix" src="../../images/express.png"></image>
+                <text class="express-dec">快递 </text>
+                <text class="express-dec" wx:if="{{expressCostType==0}}">包邮 </text>
+                <text class="express-dec" wx:if="{{expressCostType==1}}"> {{expressAmount}}</text>
+            </view>
+            <view class="express-stock">
+                <image class="stock" mode="widthFix" src="../../images/stock.png"></image>
+                <text class="stock-dec left">库存</text>
+                <text class="stock-dec">{{repertoryCount}}</text>
+            </view>
+        </view>
+    </view>
+    <view bindtap="goodsDetails" class="goods-details" data-id="{{detailUrl}}" data-name="{{goodsName}}" wx:if="{{detailUrlShow}}">
+        <view class="border-width">图文详情</view>
+    </view>
+    <view class="details-pay">
+        <view bindtap="showService" class="service-title">
+            <image class="service-img" mode="widthFix" src="../../images/customer-servic.png"></image>
+            <text class="servicer">客服</text>
+        </view>
+        <view class="right-width"></view>
+        <view bindtap="topay" class="pay" data-id="{{goodsid}}" data-name="{{goodsName}}">立即购买</view>
+    </view>
+    <view class="service-dialog" wx:if="{{show}}">
+        <view class="service">
+            <view class="serviec-phone">
+                <view class="service-name">
+                    <view class="service-header">客服电话</view>
+                    <view>{{number}}</view>
+                </view>
+            </view>
+            <view class="serviec-btn">
+                <view bindtap="hideService" class="service-back">返回</view>
+                <view bindtap="makePhoneCall" class="service-back config">呼叫</view>
+            </view>
+        </view>
+    </view>
+</view>

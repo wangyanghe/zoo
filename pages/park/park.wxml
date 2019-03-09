@@ -1,0 +1,131 @@
+<view class="park">
+    <view bindtap="hindKeyboard" class="park-search">
+        <image class="park-bg-img" src="../../images/park-1.png "></image>
+        <view class="park-search-header">
+      杭州野生动物世界
+    </view>
+        <view class="park-search-input">
+            <view class="input-search">
+                <view bindtap="parkPriv" class="park-search-name">
+                    <text class="park-names"> {{names}}</text>
+                    <image class="block-down" mode="" src="../../images/blockdown.png"></image>
+                </view>
+                <view catchtap="showKeyboard" class="park-search-num">
+                    <view class="input-texts" style="background:#fff">
+                        <view class="content">{{content}}</view>
+                        <view class="className"></view>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="parkQuery" class="input-search-text">
+                <view class="input-text">  查询</view>
+            </view>
+        </view>
+    </view>
+    <view class="park-dialog">
+        <view class="park-dialog-header">注意事项</view>
+        <view class="park-header-text">
+            <view class="park-notice">缴费后请在规定时间内离场，离场自动抬杆。</view>
+            <view class="park-notice spe"> 超时将补收额外停车费用。</view>
+            <view class="park-notice">如查询不到停车信息，请咨询相关工作人员。</view>
+        </view>
+    </view>
+    <view class="province-list" wx:if="{{privShow}}">
+        <view class="province-item">
+            <view class="province-desc">
+                <view bindtap="provDesc" class="item-list" data-name="京">
+                    <view hoverClass="gary-colors" hoverStayTime="5000"> 京</view>
+                </view>
+                <view bindtap="provDesc" class="item-list" data-name="津">津</view>
+                <view bindtap="provDesc" class="item-list" data-name="冀">冀</view>
+                <view bindtap="provDesc" class="item-list" data-name="蒙">蒙</view>
+                <view bindtap="provDesc" class="item-list" data-name="辽">辽</view>
+                <view bindtap="provDesc" class="item-list" data-name="吉">吉</view>
+                <view bindtap="provDesc" class="item-list" data-name="黑">黑</view>
+                <view bindtap="provDesc" class="item-list" data-name="沪">沪</view>
+                <view bindtap="provDesc" class="item-list last" data-name="苏">苏</view>
+            </view>
+            <view class="province-desc">
+                <view bindtap="provDesc" class="item-list" data-name="浙">浙</view>
+                <view bindtap="provDesc" class="item-list" data-name="皖">皖</view>
+                <view bindtap="provDesc" class="item-list" data-name="闽">闽</view>
+                <view bindtap="provDesc" class="item-list" data-name="赣">赣</view>
+                <view bindtap="provDesc" class="item-list" data-name="鲁">鲁</view>
+                <view bindtap="provDesc" class="item-list" data-name="豫">豫</view>
+                <view bindtap="provDesc" class="item-list" data-name="鄂">鄂</view>
+                <view bindtap="provDesc" class="item-list" data-name="湘">湘</view>
+                <view bindtap="provDesc" class="item-list last" data-name="粤">粤</view>
+            </view>
+            <view class="province-desc ">
+                <view bindtap="provDesc" class="item-list" data-name="桂">桂</view>
+                <view bindtap="provDesc" class="item-list" data-name="琼">琼</view>
+                <view bindtap="provDesc" class="item-list" data-name="陕">陕</view>
+                <view bindtap="provDesc" class="item-list" data-name="甘">甘</view>
+                <view bindtap="provDesc" class="item-list" data-name="青">青</view>
+                <view bindtap="provDesc" class="item-list" data-name="宁">宁</view>
+                <view bindtap="provDesc" class="item-list" data-name="新">新</view>
+                <view bindtap="provDesc" class="item-list" data-name="渝">渝</view>
+                <view bindtap="provDesc" class="item-list last" data-name="川">川</view>
+            </view>
+            <view class="province-desc last">
+                <view bindtap="provDesc" class="item-list" data-name="黔">黔</view>
+                <view bindtap="provDesc" class="item-list" data-name="滇">滇</view>
+                <view bindtap="provDesc" class="item-list" data-name="藏">藏</view>
+                <view bindtap="provDesc" class="item-list" data-name="港">港</view>
+                <view bindtap="provDesc" class="item-list" data-name="澳">澳</view>
+                <view bindtap="provDesc" class="item-list last" data-name="台">台</view>
+            </view>
+        </view>
+    </view>
+    <view class="province-list priv-num" wx:if="{{keyShow}}">
+        <view class="province-item">
+            <view class="province-desc">
+                <view bindtap="keyTap" class="item-list" data-name="0">
+                    <view>0</view>
+                </view>
+                <view bindtap="keyTap" class="item-list" data-name="1">1</view>
+                <view bindtap="keyTap" class="item-list" data-name="2">2</view>
+                <view bindtap="keyTap" class="item-list" data-name="3">3</view>
+                <view bindtap="keyTap" class="item-list" data-name="4">4</view>
+                <view bindtap="keyTap" class="item-list" data-name="5">5</view>
+                <view bindtap="keyTap" class="item-list" data-name="6">6</view>
+                <view bindtap="keyTap" class="item-list" data-name="7">7</view>
+                <view bindtap="keyTap" class="item-list " data-name="8">8</view>
+                <view bindtap="keyTap" class="item-list last" data-name="9">9</view>
+            </view>
+            <view class="province-desc">
+                <view bindtap="keyTap" class="item-list" data-name="Q">Q</view>
+                <view bindtap="keyTap" class="item-list" data-name="W">W</view>
+                <view bindtap="keyTap" class="item-list" data-name="E">E</view>
+                <view bindtap="keyTap" class="item-list" data-name="R">R</view>
+                <view bindtap="keyTap" class="item-list" data-name="T">T</view>
+                <view bindtap="keyTap" class="item-list" data-name="Y">Y</view>
+                <view bindtap="keyTap" class="item-list" data-name="U">U</view>
+                <view bindtap="keyTap" class="item-list " data-name="I">I</view>
+                <view bindtap="keyTap" class="item-list" data-name="O">O</view>
+                <view bindtap="keyTap" class="item-list last" data-name="P">P</view>
+            </view>
+            <view class="province-desc ">
+                <view bindtap="keyTap" class="item-list" data-name="A">A</view>
+                <view bindtap="keyTap" class="item-list" data-name="S">S</view>
+                <view bindtap="keyTap" class="item-list" data-name="D">D</view>
+                <view bindtap="keyTap" class="item-list" data-name="F">F</view>
+                <view bindtap="keyTap" class="item-list" data-name="G">G</view>
+                <view bindtap="keyTap" class="item-list" data-name="H">H</view>
+                <view bindtap="keyTap" class="item-list " data-name="J">J</view>
+                <view bindtap="keyTap" class="item-list" data-name="K">K</view>
+                <view bindtap="keyTap" class="item-list " data-name="L">L</view>
+                <view bindtap="keyTap" class="item-list last" data-name="Z">Z</view>
+            </view>
+            <view class="province-desc last">
+                <view bindtap="keyTap" class="item-list" data-name="X">X</view>
+                <view bindtap="keyTap" class="item-list " data-name="C">C</view>
+                <view bindtap="keyTap" class="item-list " data-name="V">V</view>
+                <view bindtap="keyTap" class="item-list " data-name="B">B</view>
+                <view bindtap="keyTap" class="item-list " data-name="N">N</view>
+                <view bindtap="keyTap" class="item-list " data-name="M">M</view>
+                <view bindtap="keyTap" class="item-list last del" data-name="删除">删除</view>
+            </view>
+        </view>
+    </view>
+</view>

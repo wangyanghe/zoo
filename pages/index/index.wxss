@@ -1,0 +1,806 @@
+page {
+    background: #F6F8FC;
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+.swiper-div {
+    width: 100%;
+    height: 250rpx;
+    position: relative;
+    margin-top: 20rpx;
+}
+
+.swiper-div .swiper-module {
+    height: 250rpx;
+    border-radius: 20rpx;
+    margin: 0 20rpx;
+}
+
+.slide-image {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%!important;
+    background-size: contain;
+    border-radius: 20rpx;
+}
+
+.swiper-list {
+    width: 100%;
+    box-sizing: border-box;
+    height: 250rpx;
+}
+
+.swiper-header {
+    width: 100%!important;
+    height: 100%!important;
+}
+
+.swiper-list .a-swiper-slides {
+    height: 250rpx!important;
+    width: 100%!important;
+}
+
+.swiper-list .swiper {
+    height: 250rpx!important;
+    margin: 0 20rpx;
+}
+
+.swiper-list .index-list {
+}
+
+.swiper_container {
+    height: 55rpx;
+    width: 100%;
+}
+
+.swiper-imgaes-list {
+    width: 100%;
+    height: 250rpx!important;
+    border-radius: 20rpx;
+}
+
+.swiper_item {
+    font-size: 25rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: 4rpx;
+}
+
+.swiper-list .a-swiper-indicator {
+}
+
+.swiper-list .a-image {
+    width: 750rpx!important;
+    height: 250rpx!important;
+}
+
+.swiper-list-bg {
+    position: absolute;
+    top: 330rpx;
+    left: 0;
+    height: 50rpx;
+    width: 100%;
+    background-size: 100%;
+}
+
+.swiper-imgaes {
+    width: 100%;
+    height: 50rpx;
+}
+
+.swiper-item {
+    width: 100%;
+    height: 100%;
+}
+
+.tourism {
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.effect-btn {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+}
+
+.effect-icons {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-top: 30rpx;
+}
+
+.icon-content {
+    box-sizing: border-box;
+}
+
+.icon {
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 50%;
+}
+
+.icon {
+    width: 25%;
+    height: 140rpx;
+    margin-bottom: 20rpx;
+}
+
+.effect-btn {
+}
+
+.icon.S {
+    width: 50%;
+}
+
+.icon.T {
+    width: 33.3%;
+}
+
+.icon.F {
+    width: 25%;
+}
+
+.icon.five {
+    width: 20%;
+}
+
+.icon-content:before,.icon-content:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.icon-img {
+    width: 80rpx;
+    height: 80rpx;
+    display: block;
+    margin: 0 auto;
+}
+
+.icon-img-content {
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-size: 100%;
+}
+
+.icon-desc {
+    height: 22rpx;
+    line-height: 22rpx;
+    text-align: center;
+    margin-top: 20rpx;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 22rpx;
+    font-weight: 400;
+    color: #666;
+}
+
+.buy-ticket-img {
+    width: 10rpx;
+    height: 16rpx;
+    background-size: contain;
+}
+
+.more-in {
+    display: inline-flex;
+    vertical-align: 4rpx;
+}
+
+.more-in.text {
+    padding-right: 21rpx;
+}
+
+.notice,.introduce {
+    padding-right: 30rpx;
+    padding-left: 30rpx;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.notice {
+    margin-bottom: 20rpx;
+}
+
+.notice-content {
+    width: 100%;
+    display: flex;
+    padding-top: 22rpx;
+    padding-bottom: 22rpx;
+}
+
+.notice-title-header {
+    width: 53rpx;
+    height: 25rpx;
+    line-height: 25rpx;
+    box-sizing: border-box;
+    font-size: 20rpx;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    text-align: center;
+}
+
+.tourism .notice-list {
+    flex: 1;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    height: 28rpx;
+    font-size: 20rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.notice-list {
+    border-bottom: none!important;
+    padding-top: 30rpx;
+}
+
+.introduce-content {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    border-bottom: 1rpx solid #EDEDED;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20rpx;
+}
+
+.introduce-list-images {
+    width: 10rpx;
+    height: 16rpx;
+    background-size: contain;
+    vertical-align: 4rpx;
+}
+
+.introduce-title {
+    float: left;
+    padding-left: 18rpx;
+    width: 110rpx;
+    font-size: 26rpx;
+}
+
+.introduce-list {
+    text-align: right;
+    padding-left: 20rpx;
+    color: #3399FF;
+}
+
+.buy-ticket-more {
+    color: #999999;
+    text-align: right;
+    float: right;
+    font-size: 26rpx;
+}
+
+.introduce {
+    padding-top: 26rpx;
+    background: #fff;
+}
+
+.tourism .buy {
+    background: #fff;
+    padding: 30rpx;
+}
+
+.buy-header {
+    display: flex;
+}
+
+.buy-ticket {
+    flex: 1;
+    font-size: 38rpx;
+    color: #333;
+    font-weight: bold;
+}
+
+.line-border {
+    width: 14rpx;
+    height: 27rpx;
+    padding-right: 20rpx;
+    font-size: 32rpx;
+    background-size: contain;
+    vertical-align: 0px;
+}
+
+.line-border.right {
+    margin-left: 20rpx;
+    padding-right: 0;
+}
+
+.buy-lists-ticket {
+    margin-top: 49rpx;
+    overflow: hidden;
+}
+
+.buy-images {
+    width: 180rpx;
+    height: 180rpx;
+    margin-right: 40rpx;
+    display: inline-block;
+}
+
+.buy-ticket-price {
+    color: #3399FF;
+    font-size: 24rpx;
+}
+
+.buy-ticket-name {
+    font-size: 28rpx;
+    color: #333333;
+    font-weight: bold;
+    font-family: Noto SansCJK;
+    height: 63rpx;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+    margin-top: 10rpx;
+}
+
+.zoo-images {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10rpx;
+    background-size: 100%;
+}
+
+.ticket-notice {
+    display: flex;
+    height: 48rpx;
+    line-height: 48rpx;
+}
+
+.ticket-content {
+    width: 160rpx;
+    color: #FF6633;
+    font-size: 23rpx;
+}
+
+.ticket-staus {
+    display: block;
+    text-align: center;
+    border: 2rpx solid #3399FF;
+    width: 168rpx;
+    height: 60rpx;
+    line-height: 52rpx;
+    border-radius: 30rpx;
+    color: #fff;
+    background: #3399FF;
+    font-size: 34rpx;
+    font-family: SourceHanSansCN-Normal;
+    font-weight: 400;
+    margin-top: 20rpx;
+}
+
+.ticket-content .notice-desc {
+    padding-left: 22rpx;
+}
+
+.notice-desc-images {
+    width: 10rpx;
+    height: 16rpx;
+    background-size: contain;
+}
+
+.index-list {
+    width: 100%;
+}
+
+.index-left {
+    width: 100%;
+    border-top: 1rpx solid #eee;
+    height: 98rpx;
+    line-height: 98rpx;
+    box-sizing: border-box;
+    height: 98rpx;
+    line-height: 98rpx;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 105;
+}
+
+.index-left .active {
+    color: red;
+}
+
+.index-left .line {
+    display: inline-flex;
+    width: 25%;
+    border: 1px solid;
+    box-sizing: border-box;
+}
+
+.index-right .right-list-item.active {
+    display: block;
+}
+
+.index-right {
+}
+
+.notice-dialog {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.dialog-notic-list {
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 680rpx;
+    height: 596rpx;
+    overflow-y: auto;
+    margin-left: -340rpx;
+    margin-top: -298rpx;
+    border-radius: 20rpx;
+}
+
+.info-line {
+    line-height: 36rpx;
+    text-align: justify;
+}
+
+.header-top {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.items-notice-list .text-color {
+    line-height: 36rpx;
+    color: #333;
+    padding-left: 10rpx;
+    font-size: 30rpx;
+    font-family: SourceHanSansCN-Regular;
+    font-weight: 400;
+}
+
+.notice-title-dialog {
+    text-align: left;
+    padding-bottom: 40rpx;
+    padding-top: 50rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    border-bottom: 1rpx solid #F3F4F7;
+    color: #262626;
+    font-size: 34rpx;
+    font-family: SourceHanSansCN-Bold;
+    font-weight: bold;
+}
+
+.model-delog.home {
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}
+
+.notice-clear {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.model-delog.home .model-open {
+    background: #fff;
+}
+
+.home .model-title {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.scroll-x {
+    height: auto!important;
+    width: 100%;
+}
+
+.scroll-man {
+    overflow-y: hidden;
+    overflow-x: auto;
+    height: auto!important;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.lists-ticket-content {
+    display: flex;
+    margin-bottom: 30rpx;
+}
+
+.index-ticket {
+    flex: 1;
+    height: 180rpx;
+    overflow: hidden;
+}
+
+.notice-list-height {
+    height: 30rpx;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.items-notice-list {
+    padding-top: 60rpx;
+}
+
+.component {
+    color: #666;
+    padding: 30rpx 0;
+    text-align: center;
+    margin-top: 100rpx;
+}
+
+.total-positon {
+    position: relative;
+}
+
+.home .notice-details {
+    width: 121rpx;
+    margin-right: 35rpx;
+}
+
+.model-notice {
+    padding-bottom: 40rpx!important;
+    padding-top: 60rpx;
+    display: flex;
+    padding-left: 20rpx;
+    padding-right: 40rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    border-bottom: 1rpx solid #F3F4F7;
+}
+
+.home .model-notice text {
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+
+.home .txtys {
+    padding-bottom: 0;
+}
+
+.home .notice-title {
+    color: #333;
+    font-weight: bold;
+}
+
+.home .info-titles {
+    padding-top: 20rpx;
+}
+
+.home .notice-list.type {
+    border-bottom: 0;
+}
+
+.home .model-open {
+    padding-bottom: 20rpx;
+    border-top-left-radius: 40rpx;
+    border-top-right-radius: 40rpx;
+}
+
+.coupon-dialog {
+    position: fixed;
+    top: 50rpx;
+    left: 50rpx;
+    width: 653rpx;
+    height: 905rpx;
+    z-index: 40;
+}
+
+.coupon-img {
+    position: absolute;
+}
+
+.coupon-img .coupon {
+    width: 653rpx;
+    height: 905rpx;
+    vertical-align: bottom;
+    background-size: contain;
+}
+
+.coupon-detalis {
+    position: absolute;
+    bottom: 130rpx;
+    left: 40rpx;
+    width: 580rpx;
+    height: 500rpx;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.coupon-detalis .coupon-first {
+    width: 529rpx;
+    height: 160rpx;
+    position: relative;
+}
+
+.coupon-detalis .coupon-first>image {
+    width: 529rpx;
+    height: 160rpx;
+    vertical-align: bottom;
+    background-size: contain;
+}
+
+.coupon-detalis .coupon-other {
+    width: 528rpx;
+    height: 160rpx;
+    margin: 0 5rpx;
+    position: relative;
+}
+
+.coupon-detalis .coupon-other>image {
+    width: 528rpx;
+    height: 153rpx;
+    vertical-align: bottom;
+    background-size: contain;
+}
+
+.price {
+    width: 169rpx;
+    position: absolute;
+    top: 10rpx;
+    left: 0;
+    text-align: center;
+}
+
+.price>view {
+    height: 90rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: DINAlternate-Bold;
+    font-weight: 400;
+    color: #E82E39;
+    margin-bottom: -10rpx;
+}
+
+.price>view>view {
+    font-size: 30rpx;
+    line-height: 49rpx;
+    margin-top: 17rpx;
+}
+
+.price>view>text {
+    font-size: 66rpx;
+    line-height: 66rpx;
+}
+
+.price>text {
+    font-size: 20rpx;
+    font-family: SourceHanSansCN-Medium;
+    font-weight: 400;
+    color: rgba(153,153,153,1);
+    line-height: 40rpx;
+}
+
+.detalis {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 338rpx;
+    display: flex;
+    align-items: center;
+    height: 150rpx;
+}
+
+.good-img {
+    width: 80rpx;
+    height: 80rpx;
+    border: 1px solid #eee;
+    margin-right: 10rpx;
+}
+
+.detalis-good-img {
+    width: 80rpx;
+    height: 80rpx;
+    vertical-align: bottom;
+    background-size: contain;
+}
+
+.good-text {
+    width: 230rpx;
+}
+
+.good-text view:first-child {
+    font-size: 28rpx;
+    font-family: SourceHanSansCN-Medium;
+    font-weight: 500;
+    color: rgba(51,51,51,1);
+    line-height: 40rpx;
+}
+
+.good-text view:last-child {
+    font-size: 20rpx;
+    font-family: SourceHanSansCN-Medium;
+    font-weight: 400;
+    color: rgba(153,153,153,1);
+    line-height: 40rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.receive-btn {
+    width: 100rpx;
+    height: 36rpx;
+    background: linear-gradient(186deg,rgba(237,104,68,1),rgba(237,60,71,1));
+    border-radius: 18rpx;
+    font-size: 20rpx;
+    font-family: SourceHanSansCN-Medium;
+    font-weight: 400;
+    color: #fff!important;
+    line-height: 40rpx;
+    box-sizing: border-box;
+    padding-left: 10rpx;
+    margin-right: 10rpx;
+}
+
+.coupon-bottom {
+    position: absolute;
+    bottom: 90rpx;
+    left: 120rpx;
+    font-size: 20rpx;
+    font-family: SourceHanSansCN-Regular;
+    font-weight: 400;
+    color: rgba(255,255,255,1);
+    line-height: 40rpx;
+}
+
+.coupon-clear-btn {
+    position: absolute;
+    bottom: -30rpx;
+    left: 45%;
+    width: 68rpx;
+    height: 68rpx;
+}
+
+.coupon-clear-btn image {
+    width: 68rpx;
+    height: 68rpx;
+    vertical-align: bottom;
+    background-size: contain;
+}
+
+.mask-layer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+}

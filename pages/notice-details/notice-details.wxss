@@ -1,0 +1,161 @@
+.notice-details-header {
+    background-image: url(../../images/notice-details.png-do-not-use-local-path-./pages/notice-details/notice-details.wxss&3&22);
+    background-size: cover;
+    height: 385rpx;
+    width: 100%;
+}
+
+.notice-header-content {
+    padding-top: 45rpx;
+    padding-left: 30rpx;
+    padding-right: 31rpx;
+    display: flex;
+}
+
+.notice-header-left {
+    width: 188rpx;
+    height: 188rpx;
+}
+
+.notice-header-img {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    border-radius: 20rpx;
+}
+
+.notice-header-right {
+    flex: 1;
+    padding-left: 38rpx;
+}
+
+.notice-right-title {
+    padding-top: 43rpx;
+    font-size: 34rpx;
+    font-weight: bold;
+    color: #fff;
+    padding-bottom: 40rpx;
+}
+
+.notice-right-list {
+    font-size: 22rpx;
+    font-weight: bold;
+    color: #E6E5E5;
+    line-height: 34rpx;
+}
+
+.notice-details-address {
+    margin-bottom: 50rpx;
+    margin-left: 30rpx;
+    margin-right: 31rpx;
+}
+
+.notice-address-content {
+    width: 689rpx;
+    height: 254rpx;
+    background: #fff;
+    border-radius: 20rpx;
+    box-shadow: 0px 0px 29rpx 0px rgba(163,163,163,0.23);
+    margin-top: -108rpx;
+}
+
+.notice-content-text {
+    padding-top: 49rpx;
+    padding-left: 35rpx;
+    padding-right: 34rpx;
+}
+
+.notice-open-time {
+    padding-bottom: 37rpx;
+    border-bottom: 1rpx solid #eee;
+}
+
+.open-time-img {
+    width: 28rpx;
+    height: 28rpx;
+    background-size: contain;
+    display: inline-flex;
+}
+
+.open-time-name {
+    font-size: 28rpx;
+    color: #333;
+    font-weight: bold;
+    padding-left: 15rpx;
+    padding-right: 37rpx;
+}
+
+.open-time-date {
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #999;
+}
+
+.open-address-img {
+    width: 28rpx;
+    height: 32rpx;
+    background-size: contain;
+    display: inline-block;
+}
+
+.open-map-address {
+    width: 55rpx;
+    height: 57rpx;
+    background-size: contain;
+    display: inline-block;
+}
+
+.map-address {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+}
+
+.open-address-position {
+    width: 334rpx;
+    display: inline-block;
+    padding-right: 34rpx;
+    line-height: 32rpx;
+    color: #999;
+    position: relative;
+    top: -30rpx;
+}
+
+.notice-details-panda {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.padding-water-name {
+    padding-top: 18rpx;
+    padding-bottom: 39rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.notice-open-address {
+    padding-top: 33rpx;
+}
+
+.open-time-name.address {
+    position: relative;
+    top: -34rpx;
+}
+
+.open-address-img.address {
+    position: relative;
+    top: -26rpx;
+}
+
+.panda-water-images {
+    width: 690rpx;
+    height: 257rpx;
+    background-size: contain;
+}
+
+.panda-water-img {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+}

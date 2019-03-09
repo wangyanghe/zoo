@@ -1,0 +1,29 @@
+<view class="notice-content">
+    <view class="notice-list-img" wx:for="{{merchantNoticeList}}" wx:key="{{item.id}}">
+        <view bindtap="parkDetails" class="notice-img" data-id="{{item.id}}" data-performname="{{item.performName}}">
+            <image class="notice-left-img" mode="" src="{{item.pictureUrl}}"></image>
+        </view>
+        <view class="notice-content-name">
+            <view style="display:flex">
+                <view class="notice-zoo-item" style="flex:1">
+                    <view class="notice-zoo-list">{{item.performName}}</view>
+                    <view class="notice-zoo-name" style="margin-top:20rpx;">
+                        <view class="zoo-panda">{{item.performPlace}}</view>
+                    </view>
+                </view>
+                <view class="notice-zoo-name" style="width:100rpx;justify-content:center;margin-top:20rpx;">
+                    <view bindtap="map" class="notice-map" data-mapLatitude="{{item.mapLatitude}}" data-mapLevel="{{item.mapLevel}}" data-mapLongitude="{{item.mapLongitude}}">
+                        <image class="notice-zoo-position" mode="" src="../../images/new-notice-map.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="notice-zoo-time" style="margin-top:0">
+                <image mode="widthFix" src="../../images/new-notice-time.png" style="width:28rpx;height:28rpx !important;vertical-align:bottom"></image>
+                <text class="zoo-time-list">{{item.performStartTime}}--{{item.performEndTime}}</text>
+            </view>
+            <view class="notice-zoo-details">
+           {{item.performDescription}}
+        </view>
+        </view>
+    </view>
+</view>

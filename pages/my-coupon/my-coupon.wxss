@@ -1,0 +1,23 @@
+.noCoupon {
+    margin: 176rpx 98rpx auto;
+    width: 554rpx;
+    height: 347rpx;
+    background-size: cover;
+    text-align: center;
+    line-height: 230rpx;
+    color: #999;
+    font-size: 36rpx;
+    font-family: Noto SansCJK;
+    font-weight: bold;
+    position: relative;
+}
+
+.coupon-image {
+    width: 387rpx;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -198rpx;
+    height: 242rpx;
+    margin-top: -204rpx;
+}

@@ -1,0 +1,189 @@
+.park-detail {
+    width: 100%;
+    background: linear-gradient(135deg,rgba(102,204,204,1),rgba(55,181,220,1));
+}
+
+.park-content {
+    margin: 40rpx;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
+}
+
+.park-img-detail {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.park-car {
+    margin-left: 53rpx;
+    margin-right: 44rpx;
+    padding-top: 110rpx;
+    border-bottom: 1rpx dashed #D2D2D2;
+}
+
+.park-car-img {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+}
+
+.park-num {
+    padding-bottom: 55rpx;
+    display: block;
+    margin: 0 atuo;
+    text-align: center;
+    font-size: 34px;
+    color: #333;
+    font-weight: bold;
+}
+
+.park-car-width {
+    width: 422rpx;
+    height: 134rpx;
+    margin: 0 auto;
+}
+
+.park-num {
+    padding-top: 36rpx;
+    padding-bottom: 55rpx;
+}
+
+.park-time {
+    margin-top: 41rpx;
+    margin-left: 84rpx;
+    margin-right: 79rpx;
+}
+
+.park-time-in,.park-time-out {
+    display: flex;
+    height: 27rpx;
+    line-height: 27rpx;
+}
+
+.park-time-in {
+    margin-bottom: 30rpx;
+}
+
+.park-time-out {
+    margin-bottom: 54rpx;
+}
+
+.time-in {
+    width: 120rpx;
+    color: #999;
+    font-size: 28rpx;
+}
+
+.time-in-date {
+    flex: 1;
+    text-align: right;
+    font-size: 28rpx;
+    color: #666;
+}
+
+.park-pay {
+    border-top: 1rpx dashed #D2D2D2;
+}
+
+.park-pay-text {
+    padding-top: 38rpx;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 26rpx;
+    color: #333;
+    font-weight: 500;
+    padding-bottom: 23rpx;
+}
+
+.park-pay-num {
+    font-size: 62rpx;
+    color: #333;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 26px;
+    padding-bottom: 49rpx;
+}
+
+.park-cheap,.park-paymen {
+    margin-left: 53rpx;
+    margin-right: 44rpx;
+    border-top: 1rpx dashed #D2D2D2;
+}
+
+.park-paymen {
+    padding-bottom: 44rpx;
+}
+
+.park-cheap-feed {
+    padding-left: 25rpx;
+    padding-right: 25rpx;
+    display: flex;
+}
+
+.park-cheap-text,.park-paymen-text {
+    width: 110rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.park-cheap-num,.park-paymen-num.paymen {
+    flex: 1;
+    text-align: right;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.park-cheap-num.feed {
+    color: #FF6633;
+    font-weight: bold;
+}
+
+.park-cheap-feed.cheap {
+    padding-top: 30rpx;
+}
+
+.park-cheap-feed.coupon {
+    padding-top: 19rpx;
+    padding-bottom: 19rpx;
+}
+
+.park-cheap-feed.discount {
+    padding-bottom: 29rpx;
+}
+
+.park-paymen-header {
+    display: flex;
+    padding-top: 30rpx;
+    padding-left: 25rpx;
+    padding-right: 25rpx;
+}
+
+.park-paymen-num.paymen {
+    font-size: 26rpx;
+    color: #333;
+    font-weight: bold;
+}
+
+.park-alipay {
+    margin-left: 29rpx;
+    margin-right: 30rpx;
+    margin-bottom: 39rpx;
+    text-align: center;
+    height: 89rpx;
+    line-height: 89rpx;
+    background: linear-gradient(135deg,rgba(102,204,204,1),rgba(54,180,188,1));
+    border-radius: 45rpx;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.park-alipay-text {
+    width: 100%;
+}

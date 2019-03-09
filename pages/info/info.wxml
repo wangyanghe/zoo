@@ -1,0 +1,84 @@
+<view class="info-lists">
+    <view>
+        <view>
+            <view class="info-bg">
+                <view class="info-user">
+                    <view wx:if="{{showUserInfo}}">
+                        <button bindgetuserinfo="onGotUserInfo" class="user-infos" lang="zh_CN" openType="getUserInfo">
+                            <image class="info-user-name" mode="widthFix" src="../../images/user.png"></image>
+                            <view style="color:#fff">点击加载头像昵称</view>
+                        </button>
+                    </view>
+                    <view class="show-user" style="width:300rpx;margin-left:-90rpx" wx:else>
+                        <view class="user-infos">
+                            <image class="info-user-name" mode="widthFix" src="{{avatar}}"></image>
+                            <view style="color:#fff">{{nickName}}</view>
+                        </view>
+                    </view>
+                </view>
+                <image class="info-image-img" src="../../images/info-bg.png"></image>
+            </view>
+        </view>
+        <view style="position:relative;z-index:2000 !important">
+            <view class="cheap">
+                <view class="cheap-list">
+                    <image class="cheap-img" mode="widthFix" src="../../images/moneyx.png"></image>
+                </view>
+                <view class="cheap-text">
+                卡包(0)
+              </view>
+                <view class="cheap-right">
+                    <image class="cheap-right-img" mode="widthFix" src="../../images/right.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view>
+        <view class="info-order">
+            <view class="order-header">购票订单</view>
+            <view class="order-title">
+                <view class="order-width">
+                    <view bindtap="unpay" class="icon-btn" data-id="1">
+                        <image class="icon-btn-pay" mode="widthFix" src="../../images/unpay.png"></image>
+                        <view>未付款</view>
+                    </view>
+                </view>
+                <view class="order-width">
+                    <view bindtap="unpay" class="icon-btn" data-id="2">
+                        <image class="icon-btn-go" mode="widthFix" src="../../images/going.png"></image>
+                        <view>待出行</view>
+                    </view>
+                </view>
+                <view class="order-width">
+                    <view bindtap="unpay" class="icon-btn" data-id="3">
+                        <image class="icon-btn-finish" mode="widthFix" src="../../images/finish.png"></image>
+                        <view>已完成</view>
+                    </view>
+                </view>
+                <view class="order-width">
+                    <view bindtap="unpay" class="icon-btn" data-id="4">
+                        <image class="icon-btn-sale" mode="widthFix" src="../../images/after-sale.png"></image>
+                        <view>退款/售后</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="info-order park">
+            <view class="order-header">停车订单</view>
+            <view class="order-title">
+                <view class="order-width">
+                    <view bindtap="parkList" class="icon-btn" data-id="0">
+                        <image class="icon-btn-pay" mode="widthFix" src="../../images/park-unpay.png"></image>
+                        <view>未付款</view>
+                    </view>
+                </view>
+                <view class="order-width">
+                    <view bindtap="parkList" class="icon-btn" data-id="1">
+                        <image class="icon-btn-go finish" mode="widthFix" src="../../images/pay-finish.png"></image>
+                        <view>已付款</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

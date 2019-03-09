@@ -1,0 +1,3 @@
+<view class="scenic">
+    <image class="scenic-width" mode="widthFix" src="{{descriptionUrl}}"></image>
+</view>

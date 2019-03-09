@@ -1,0 +1,9 @@
+.a-contact-button {
+}
+
+.ai-header {
+    width: 100%;
+    display: block;
+    margin: 81rpx 33rpx auto 29rpx;
+    background-size: 100%;
+}

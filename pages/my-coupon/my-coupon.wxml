@@ -1,0 +1,6 @@
+<view>
+    <view class="noCoupon">
+        <view>暂无可用优惠券</view>
+        <image class="coupon-image" src="../../images/coupon-no.png"></image>
+    </view>
+</view>

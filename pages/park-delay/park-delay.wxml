@@ -1,0 +1,18 @@
+<view class="park-all">
+    <view class="park-delay">
+        <view>
+            <view class="park-delay-image">
+                <image class="park-delay-img" mode="" src="../../images/park-delay.png"></image>
+            </view>
+            <view class="park-delay-status">
+          缴费成功!
+        </view>
+        </view>
+        <view class="park-delay-title">
+       剩余免费离场时间
+      <text class="park-delay-color">{{parkOrderPayId}}分钟</text>
+        </view>
+        <view class="park-delay-list">若超时仍未离开，将产生额外费用</view>
+        <view bindtap="delayBtn" class="park-delay-btn">确定</view>
+    </view>
+</view>

@@ -1,0 +1,271 @@
+page {
+    background: #fff;
+}
+
+.park {
+    width: 100%;
+    height: 100%;
+}
+
+.park-search {
+    height: 385rpx;
+    background-size: contain;
+}
+
+.park-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.park-search {
+    width: 100%;
+    padding-left: 97rpx;
+    padding-right: 94rpx;
+    box-sizing: border-box;
+    padding-top: 50rpx;
+    position: relative;
+}
+
+.park-search-header {
+    display: block;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 36rpx;
+    font-weight: bold;
+    padding-bottom: 76rpx;
+    text-align: center;
+    font-family: PingFang-SC-Regular;
+    position: relative;
+    z-index: 2000;
+}
+
+.input-search {
+    width: 380rpx;
+    height: 65rpx;
+}
+
+.input-texts {
+    width: 100%;
+    padding: 10rpx 16rpx;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 24rpx;
+    border-radius: 10rpx;
+    background: #fff;
+}
+
+.input-text {
+    width: 136rpx;
+    height: 48rpx;
+    font-size: 26rpx;
+    color: #333;
+    text-align: center;
+    margin-left: 42rpx;
+    border-radius: 24rpx;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+.park-search-input {
+    display: flex;
+    position: relative;
+    z-index: 2000;
+}
+
+.input-search,.input-text {
+    display: inline-flex;
+}
+
+.input-search-text {
+    height: 65rpx;
+    line-height: 65rpx;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.park-dialog {
+    width: 560rpx;
+    height: 285rpx;
+    background: #fff;
+    border-radius: 20rpx;
+    position: relative;
+    top: -108rpx;
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0px 0px 34px 6px rgba(102,204,204,0.2);
+    z-index: 2000;
+}
+
+.park-dialog-header {
+    font-size: 32rpx;
+    font-family: PingFang-SC-Regular;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40rpx;
+    padding-top: 29rpx;
+}
+
+.park-notice {
+    height: 26rpx;
+    font-size: 26rpx;
+    font-family: PingFang-SC-Regular;
+    font-weight: 400;
+    color: #333;
+    padding-left: 24rpx;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.park-notice.spe {
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.park-shadow {
+    background-image: url(../../images/shadow.png-do-not-use-local-path-./pages/park/park.wxss&142&22);
+    background-size: contain;
+    height: 30rpx;
+    width: 5.2rpx;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: -57rpx;
+}
+
+.park-search-name {
+    width: 108rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    border-radius: 10rpx;
+    background: #EBF7F7;
+    display: inline-block;
+    margin-right: 25rpx;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30rpx;
+}
+
+.gary-colors {
+    background: #9EA5B0;
+}
+
+.park-names {
+    margin-right: 10rpx;
+}
+
+.block-down {
+    width: 20rpx;
+    height: 14rpx;
+    background-size: 100%;
+}
+
+.province-list {
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    box-sizing: border-box;
+    background: #192942;
+    height: 400rpx;
+    background: rgba(25,41,66,0.2);
+}
+
+.province-item {
+    height: 400rpx;
+    box-sizing: border-box;
+    padding: 18rpx 11rpx;
+    text-align: center;
+}
+
+.item-list {
+    width: 61rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 10rpx;
+    background: #FAFBFD;
+    margin-right: 13rpx;
+    margin-bottom: 15rpx;
+    display: inline-block;
+    font-size: 32rpx;
+    font-weight: bold;
+    text-align: center;
+    color: #333333;
+    font-family: Noto SansCJK;
+}
+
+.item-list.last {
+    margin-right: 0;
+}
+
+.province-desc {
+    text-align: center;
+    height: 95rpx;
+}
+
+.province-desc.last {
+    text-align: left;
+    padding-left: 16rpx;
+}
+
+.input-texts {
+    width: 265rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 0 16rpx;
+}
+
+.province-list.priv-num {
+    margin: 0;
+}
+
+.item-list.last.del {
+    width: 101rpx;
+    float: right;
+}
+
+.content {
+    font-size: 30rpx;
+    line-height: 60rpx;
+    font-weight: bold;
+    display: inline-block;
+    padding-right: 4rpx;
+}
+
+.className {
+    width: 6rpx;
+    height: 40rpx;
+    background: #666;
+    border-radius: 6rpx;
+    animation: twinkling 1s infinite;
+    display: inline-block;
+    position: relative;
+    top: 8rpx;
+}
+
+@-webkit-keyframes twinkling {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes twinkling {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

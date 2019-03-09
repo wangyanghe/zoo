@@ -1,0 +1,21 @@
+<view class="mall">
+    <view class="mall-left">
+        <view bindtap="tabFun" class="top-order {{tabArr.curHdIndex==index?'active':''}}" data-groupid="{{item.goodsGroupId}}" data-groupname="{{item.groupName}}" data-id="{{index}}" wx:for="{{groupList}}" wx:key="{{index}}">{{item.groupName}}</view>
+    </view>
+    <view class="mall-right">
+        <view class="top-right {{tabArr.curBdIndex==seletedIndex?'active':''}}">
+            <view bindtap="goodsDetails" class="right-list" data-goodsid="{{item.goodsId}}" wx:for="{{goodsList}}" wx:key="{{index}}">
+                <view class="list-img">
+                    <image class="img-width" mode="widthFix" src="{{item.goodsPicture}}"></image>
+                </view>
+                <view class="list-title">
+                    <view class="list-name">{{item.goodsName}}</view>
+                    <view class="list-price">
+                        <view class="price-num">￥{{item.goodsPrice}}</view>
+                        <view class="price-sale">已售{{item.saleCount}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

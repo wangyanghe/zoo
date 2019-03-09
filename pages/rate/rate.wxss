@@ -1,0 +1,331 @@
+page {
+    background: #fff;
+}
+
+.rate-textarea {
+    padding: 43rpx 29rpx 30rpx 27rpx;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: -80rpx;
+    position: relative;
+    z-index: 200;
+}
+
+.textarea-item {
+    width: 100%;
+    height: 234rpx!important;
+    padding: 0;
+    border: 1rpx solid #eee;
+    z-index: 0!important;
+    background: #fff;
+}
+
+.evaluation_top {
+    padding-top: 58rpx;
+    padding-bottom: 41rpx;
+}
+
+.ico {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+.rate-notice {
+    width: 100%;
+    background: #fff;
+}
+
+.rate-header-notices {
+    font-size: 26rpx;
+    color: #999999;
+    text-align: center;
+    position: relative;
+    border-bottom: 1rpx solid #E6E6E6;
+    padding-bottom: 40rpx;
+}
+
+.rate-cust-notice {
+    width: 100%;
+    height: 380rpx;
+}
+
+.rate-images-img {
+    width: 100%;
+    position: absolute;
+    top: -70rpx;
+    left: 0;
+    z-index: 10;
+    background: #fff;
+}
+
+.rate-header {
+    padding-left: 28rpx;
+    position: absolute;
+    z-index: 2000;
+    text-align: center;
+    margin: 58rpx 28rpx 0;
+}
+
+.ico_pace {
+    width: 63rpx;
+    height: 63rpx;
+    margin-bottom: 13rpx;
+}
+
+.ico_pace.unsttisfy {
+    width: 67rpx;
+    height: 65rpx;
+}
+
+.rate-submit-title {
+    margin: 30rpx;
+    height: 80rpx;
+}
+
+.rate-submit {
+    width: 100%;
+    height: 80rpx;
+    background: #3399FF;
+    color: #fff;
+    text-align: center;
+    float: right;
+    line-height: 80rpx;
+    font-size: 36rpx;
+    font-family: SourceHanSansCN-Regular;
+    font-weight: 400;
+}
+
+.my-nitice {
+    border-top: 1rpx solid #EEEEEE;
+    padding-left: 26rpx;
+    padding-right: 29rpx;
+}
+
+.my-notice-header {
+    margin-top: 41rpx;
+    color: #333333;
+    margin-bottom: 38rpx;
+    font-size: 38rpx;
+    font-family: SourceHanSansCN-Bold;
+    font-weight: bold;
+}
+
+.my-notices {
+    display: flex;
+}
+
+.user-info-img {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.img-width {
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+}
+
+.user-info-name {
+    margin-left: 28rpx;
+    flex: 1;
+}
+
+.customer-name {
+    font-size: 26rpx;
+    color: #666;
+    font-family: Noto SansCJK;
+    font-weight: bold;
+    margin-bottom: 15rpx;
+}
+
+.customer-time {
+    font-size: 22rpx;
+    color: #999;
+    padding-bottom: 30rpx;
+}
+
+.customer-notice {
+    color: #333;
+    font-size: 24rpx;
+    height: 90rpx;
+    word-break: break-all;
+}
+
+.service-notice {
+    background: #F3F3F3;
+}
+
+.service-notice-padding {
+    padding: 21rpx 23rpx 20rpx 11rpx;
+    display: flex;
+    color: #333333;
+    font-size: 24rpx;
+}
+
+.service-name {
+    width: 50rpx;
+}
+
+.service-notice-list {
+    flex: 1;
+    padding-left: 12rpx;
+}
+
+.feedback,.feedback-com {
+    width: 670rpx;
+    height: 390rpx;
+    background: #fff;
+    box-shadow: 0px 0px 32px 0px rgba(0,0,0,0.2);
+    border-radius: 20rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -335rpx;
+    margin-top: -195rpx;
+    z-index: 2000!important;
+}
+
+.feedback-dialog,.feedback-com-dialog {
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2000!important;
+}
+
+.feedback-header {
+    padding: 128rpx 124rpx 94rpx;
+    border-bottom: 2rpx solid #EDEDED;
+    font-size: 32rpx;
+    font-family: SourceHanSansCN-Regular;
+    font-weight: bold;
+    color: #666;
+    text-align: center;
+}
+
+.feedback-btn {
+    display: flex;
+    height: 116rpx;
+    justify-content: space-around;
+    padding-left: 45rpx;
+    padding-right: 45rpx;
+}
+
+.feedback-save {
+    width: 116rpx;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34rpx;
+    font-family: SourceHanSansCN-Medium;
+    font-weight: bold;
+    color: #333;
+}
+
+.feedback-com-header {
+    padding: 35rpx 40rpx 45rpx 46rpx;
+    color: #999;
+    line-height: 40rpx;
+    font-size: 26rpx;
+    font-family: SourceHanSansCN-Medium;
+    font-weight: 500;
+}
+
+.feedback-com-num {
+    padding: 0 61rpx 42rpx 35rpx;
+    display: flex;
+    border-bottom: 2rpx solid #EDEDED;
+}
+
+.feedback-com-input {
+    border: 1rpx solid #EEEEEE;
+    border-radius: 15rpx;
+    width: 326rpx;
+    height: 66rpx;
+    flex: 1;
+}
+
+.feedback-com-label {
+    width: 106rpx;
+    height: 66rpx;
+    line-height: 70rpx;
+    font-size: 30rpx;
+    font-family: SourceHanSansCN-Regular;
+    font-weight: bold;
+    padding-right: 20rpx;
+}
+
+.feedback-com-btn {
+    display: flex;
+    justify-content: space-around;
+    height: 114rpx;
+    padding-left: 45rpx;
+    padding-right: 45rpx;
+}
+
+.com-dialog {
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.com-title {
+    width: 496rpx;
+    height: 326rpx;
+    background: #fff;
+    box-shadow: 1rpx 0px 8rpx rgba(51,51,51,0.06);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -248rpx;
+    margin-top: -163rpx;
+    border-radius: 15rpx;
+}
+
+.com-header {
+    padding: 30rpx;
+    font-size: 30rpx;
+    line-height: 45rpx;
+    height: 160rpx;
+    text-align: justify;
+}
+
+.second-header {
+    height: 157rpx;
+    line-height: 157rpx;
+    width: 100%;
+    text-align: center;
+}
+
+.com-btns {
+    display: flex;
+    margin: 0 80rpx;
+    justify-content: space-around;
+}
+
+.second-btns.pay {
+    font-size: 30rpx;
+    margin-top: 20rpx;
+}
+
+.pay .second-save {
+    height: 54rpx;
+}
+
+.second-save {
+    justify-content: space-around;
+    width: 116rpx;
+    height: 44rpx;
+    border: 0.5px solid #999999;
+    border-radius: 5rpx;
+    display: inline-flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    align-items: center;
+}

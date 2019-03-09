@@ -1,0 +1,694 @@
+.pages-all {
+    width: 100%;
+}
+
+.order-all {
+    background-color: #f3f3f3;
+    margin-bottom: 98rpx;
+}
+
+.OD-title {
+    width: 750rpx;
+    height: 183rpx;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.OD-status {
+    box-sizing: content-box;
+    font-size: 36rpx;
+    font-family: Noto SansCJK;
+    font-weight: bold;
+    color: rgba(254,254,254,1);
+    padding-left: 29rpx;
+    padding-top: 40rpx;
+    position: relative;
+    z-index: 2000;
+}
+
+.OD-time {
+    box-sizing: content-box;
+    font-size: 26rpx;
+    font-family: Noto SansCJK;
+    font-weight: 400;
+    color: rgba(255,255,255,1);
+    opacity: 0.9;
+    line-height: 31rpx;
+    padding-left: 29rpx;
+    padding-top: 23rpx;
+    position: relative;
+    z-index: 2000;
+}
+
+.OD-ticketDetails {
+    box-sizing: content-box;
+    padding: 28rpx 28rpx 0 28rpx;
+    background-color: #fff;
+}
+
+.OD-TD-tit {
+    box-sizing: content-box;
+    font-size: 36rpx;
+    font-family: Noto SansCJK;
+    font-weight: bold;
+    color: rgba(51,51,51,1);
+    border-bottom: 1rpx solid #eee;
+    padding-bottom: 30rpx;
+}
+
+.OD-TD-tit.packages {
+    font-size: 36rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: bold;
+    color: #333;
+}
+
+.packages-body {
+}
+
+.packages-content {
+    padding-bottom: 31rpx;
+}
+
+.packages-content:last-child {
+    border-bottom: 1rpx solid #EEEEEE;
+}
+
+.content-title {
+    width: 185rpx;
+}
+
+.content-info {
+    display: flex;
+    justify-content: space-around;
+}
+
+.shopping {
+    margin-right: 11rpx;
+    width: 32rpx;
+    height: 32rpx;
+    background: rgba(80,200,209,1);
+    border-radius: 2rpx;
+    font-size: 22rpx;
+    font-family: PingFangSC-Light;
+    font-weight: bold;
+    color: #fff;
+    padding: 8rpx;
+}
+
+.content-first {
+    display: flex;
+}
+
+.content-name {
+    font-size: 32rpx;
+    font-family: PingFangSC-Light;
+    font-weight: bold;
+    flex: 1;
+}
+
+.packages-header {
+    font-size: 34rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 38rpx;
+}
+
+.OD-TD-conter {
+    box-sizing: content-box;
+    padding-top: 31rpx;
+}
+
+.OD-TD-ticketname {
+    font-size: 34rpx;
+    font-family: Noto SansCJK;
+    font-weight: bold;
+    color: rgba(51,51,51,1);
+}
+
+.OD-TD-ul {
+    box-sizing: content-box;
+    padding-top: 10rpx;
+}
+
+.OD-TD-ul .OD-TD-li .OD-TD-li-tit {
+    line-height: 50rpx;
+    font-size: 32rpx;
+    font-family: Noto SansCJK;
+    font-weight: bold;
+    color: #666;
+}
+
+.OD-TD-ul .OD-TD-li .OD-TD-li-detail {
+    line-height: 50rpx;
+    font-size: 32rpx;
+    font-family: Noto SansCJK;
+    font-weight: 400;
+    color: #333;
+}
+
+.OD-TD-regressionRule {
+    height: 72rpx;
+    border-top: 1rpx solid #eee;
+    border-bottom: 1rpx solid #eee;
+    color: #3399ff;
+    text-align: center;
+    line-height: 72rpx;
+    box-sizing: border-box;
+}
+
+.OD-TD-regressionRule .down {
+    display: inline-block;
+    height: 14rpx;
+    width: 24rpx;
+    margin-left: 16rpx;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.OD-TD-rRconter {
+    font-size: 30rpx;
+    line-height: 45rpx;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    font-family: Noto SansCJK;
+    font-weight: 400;
+    color: rgba(51,51,51,1);
+}
+
+.OD-bookingInformation {
+    margin-top: 20rpx;
+    background-color: #fff;
+    min-height: 167rpx;
+    padding: 0 26rpx 0 26rpx;
+}
+
+.OD-BI-tit {
+    height: 96rpx;
+    font-size: 36rpx;
+    font-family: Noto SansCJK;
+    font-weight: bold;
+    color: #333;
+    line-height: 96rpx;
+    border-bottom: 1rpx solid #eee;
+}
+
+.OD-BI-center .OD-BI-li {
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+.OD-BI-center .OD-BI-li .OD-BI-li-tit {
+    display: inline-block;
+    font-size: 32rpx;
+    font-family: Noto SansCJK;
+    font-weight: bold;
+    color: rgba(102,102,102,1);
+    width: 170rpx;
+}
+
+.OD-BI-center .OD-BI-li .OD-BI-li-conter {
+    color: #333;
+    font-size: 32rpx;
+    font-family: Noto SansCJK;
+    font-weight: 400;
+}
+
+.OD-orderInformation {
+    margin-top: 20rpx;
+    height: 242rpx;
+    background-color: #fff;
+    padding: 0 26rpx;
+}
+
+.OD-OI-tit {
+    height: 94rpx;
+    font-size: 36rpx;
+    font-family: Noto SansCJK;
+    font-weight: bold;
+    color: #333;
+    line-height: 94rpx;
+    border-bottom: 1rpx solid #eee;
+}
+
+.OD-OI-li {
+    height: 72rpx;
+    line-height: 72rpx;
+}
+
+.OD-OI-li .OD-OI-li-tit {
+    display: inline-block;
+    width: 170rpx;
+    font-size: 32rpx;
+    font-family: Noto SansCJK;
+    font-weight: bold;
+    color: rgba(102,102,102,1);
+}
+
+.OD-OI-li .OD-OI-li-conter {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 32rpx;
+    font-family: Noto SansCJK;
+    color: #333;
+}
+
+.PD-footerDiv {
+    border-top: 1rpx solid #eee;
+    width: 100%;
+    height: 98rpx;
+    line-height: 98rpx;
+    display: flex;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.PD-customerService {
+    box-sizing: content-box;
+    display: inline-block;
+    width: 50rpx;
+    height: 50rpx;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 20rpx;
+}
+
+.PD-FD-amount {
+    display: inline-flex;
+    width: 240rpx;
+    border-left: 1rpx solid #eee;
+    padding-left: 15rpx;
+}
+
+.PD-FD-amount .amount-tit {
+    display: inline-block;
+    color: #333;
+    font-size: 28rpx;
+}
+
+.PD-FD-amount .amount-number {
+    color: #ff6633;
+    display: inline-block;
+    margin-left: 10rpx;
+    font-size: 28rpx;
+}
+
+.PD-FD-details {
+    display: inline-block;
+    width: 80rpx;
+    height: 92rpx;
+    font-size: 26rpx;
+    line-height: 92rpx;
+    background-position: center right;
+    background-size: 20rpx 20rpx;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    color: #3366ff;
+}
+
+.up-allow {
+    width: 12rpx;
+    height: 21rpx;
+    margin-left: 20rpx;
+    display: inline-block;
+}
+
+.OD-footer-right {
+    padding-top: 20rpx;
+    float: right;
+    flex: 1;
+    text-align: right;
+}
+
+.OD-FR-btn {
+    width: 136rpx;
+    height: 48rpx;
+    border-radius: 20rpx;
+    border-radius: 50rpx;
+    font-size: 23rpx;
+    line-height: 50rpx;
+    display: inline-flex;
+    margin-bottom: 20rpx;
+    margin-right: 10rpx;
+    vertical-align: top;
+}
+
+.OD-FR-orange {
+    border-color: #ff6633;
+}
+
+.footer-details {
+    display: none;
+    position: absolute;
+    bottom: 98rpx;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    height: 270rpx;
+    box-shadow: 0px 0px 1rpx 0px rgba(0,0,0,0.3);
+}
+
+.footer-details.orders {
+    height: 320rpx;
+}
+
+.active-detial {
+    width: 100%;
+}
+
+.poundage.active-detial {
+    height: 318rpx;
+}
+
+.footer-details.active-detial {
+    display: block;
+}
+
+.footer-details .list-detail {
+}
+
+.footer-details .LD-tit {
+    font-size: 32rpx;
+    height: 31rpx;
+    line-height: 31rpx;
+    font-family: Noto SansCJK;
+    font-weight: 400;
+    color: #000;
+    padding-top: 29rpx;
+    padding-left: 47rpx;
+}
+
+.footer-details .LD-li {
+    height: 26rpx;
+    line-height: 26rpx;
+    font-size: 28rpx;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24rpx;
+    margin-top: 28rpx;
+    padding-right: 27rpx;
+    padding-left: 47rpx;
+}
+
+.footer-details .LD-liName {
+    font-size: 28rpx;
+    font-family: Noto SansCJK;
+    font-weight: 400;
+    color: #000;
+}
+
+.footer-details .LD-liNumber {
+    font-size: 26rpx;
+    font-family: Noto SansCJK;
+    font-weight: bold;
+    color: #333;
+}
+
+.footer-details .LD-footer {
+    text-align: right;
+    padding-right: 23rpx;
+    line-height: 84rpx;
+    font-size: 28rpx;
+    font-family: Noto SansCJK;
+    font-weight: 400;
+    color: rgba(0,0,0,1);
+    border-top: 1rpx solid #eee;
+}
+
+.order-details-show {
+    display: inline-flex;
+    width: 100rpx;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-groups {
+    width: 136rpx;
+    height: 48rpx;
+    border: 1rpx solid #ff6633;
+    border-radius: 24rpx;
+    text-align: center;
+}
+
+.second-diaolg,.pay-diaolg {
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.second-title {
+    width: 496rpx;
+    height: 226rpx;
+    background: #fff;
+    box-shadow: 1rpx 0px 8rpx rgba(51,51,51,0.06);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -248rpx;
+    margin-top: -113rpx;
+    border-radius: 15rpx;
+}
+
+.pay-title {
+    width: 496rpx;
+    height: 326rpx;
+    background: #fff;
+    box-shadow: 1rpx 0px 8rpx rgba(51,51,51,0.06);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -248rpx;
+    margin-top: -163rpx;
+    border-radius: 15rpx;
+}
+
+.pay-header {
+    padding: 30rpx;
+    font-size: 30rpx;
+    line-height: 45rpx;
+    height: 160rpx;
+    text-align: justify;
+}
+
+.second-header {
+    height: 157rpx;
+    line-height: 157rpx;
+    width: 100%;
+    text-align: center;
+}
+
+.second-btns {
+    display: flex;
+    margin: 0 80rpx;
+    justify-content: space-around;
+}
+
+.second-btns.pay {
+    font-size: 30rpx;
+    margin-top: 20rpx;
+    text-align: center;
+}
+
+.pay .second-save {
+    height: 54rpx;
+}
+
+.second-save {
+    width: 100rpx;
+    height: 54rpx;
+    border: 1px solid #999999;
+    border-radius: 5rpx;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-image-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.up-allow-img {
+    width: 18rpx;
+    height: 11rpx;
+    padding-bottom: 2px;
+}
+
+.auth-go {
+    padding: 30rpx 27rpx;
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.auth-go-header {
+    font-family: Noto SansCJK;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 29rpx;
+}
+
+.auth-code {
+    margin-bottom: 21rpx;
+    text-align: center;
+}
+
+.auth-go-img {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.auth-tickck-num {
+    font-weight: 400;
+    font-size: 26rpx;
+    color: #666666;
+    text-align: center;
+    margin-top: 29rpx;
+}
+
+.auth-photo {
+    color: #3399FF;
+    font-weight: bold;
+    font-size: 24rpx;
+    display: inline-block;
+    padding-left: 17rpx;
+}
+
+.auto-photo-img {
+    width: 30rpx;
+    height: 25rpx;
+}
+
+.next.left-list {
+    transform: rotate(-180deg);
+    left: 50%;
+    top: 40%;
+    margin-left: -6rpx;
+    margin-top: -12rpx;
+    position: absolute;
+}
+
+.next.right-list {
+    right: 50%;
+    top: 40%;
+    margin-left: -6rpx;
+    margin-top: -12rpx;
+    position: absolute;
+}
+
+.next {
+    width: 13rpx;
+    height: 23rpx;
+}
+
+.page-list {
+    margin-left: 70rpx;
+    margin-right: 70rpx;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-list .auth-go {
+    flex: 1;
+    overflow: hidden;
+    height: 200px;
+    padding: 0rpx;
+}
+
+.auth-images {
+    width: 285rpx;
+    height: 285rpx;
+}
+
+.auth-images-list {
+    width: 350rpx;
+    height: 350rpx;
+    margin: 0 auto;
+}
+
+.left {
+    width: 30px;
+    height: 260px;
+    position: relative;
+}
+
+.right {
+    width: 30px;
+    height: 260px;
+    position: relative;
+}
+
+.page-detalis {
+    display: flex;
+}
+
+.page-img-list {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 60%;
+    text-align: center;
+    margin: auto;
+}
+
+.page-poins {
+    height: 10rpx;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.page-poins .page-poin {
+    width: 10rpx;
+    height: 10rpx;
+    border-radius: 50%;
+    background-color: #D7D7D7;
+    margin: 15rpx 5rpx 0;
+}
+
+.page-poins .page-poin-this {
+    width: 20rpx;
+    height: 10rpx;
+    border-radius: 5rpx;
+    background-color: #FFDC52;
+    margin: 15rpx 5rpx 0;
+}
+
+.swiper-div {
+    width: 80%;
+    height: 299rpx;
+}
+
+.swiper-div .swiper-module {
+    height: 260rpx;
+    border-radius: 20rpx;
+    margin: 0 140rpx;
+}
+
+.swiper-module {
+    width: 258rpx;
+}
+
+.slide-image {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+}
+
+.QR-code {
+    display: flex;
+    justify-content: center;
+}

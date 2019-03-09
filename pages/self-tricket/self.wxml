@@ -1,0 +1,102 @@
+<view class="self-helf" style="{{flag==1?'position:fixed;':''}}">
+    <view>
+        <view class="tab self">
+            <view class="tab-right">
+                <view class="right-item {{tabArr.curBdIndex=='0'?'active':''}}">
+                    <view class="item-details" wx:for="{{memberTicketList}}" wx:key="{{item.id}}">
+                        <view catchtap="show" class="img-content" data-id="{{item.ticketInfoId}}">
+                            <image class="img-content-width" model="widthFix" src="{{item.pictureUrl}}" style=""></image>
+                        </view>
+                        <view class="tricket-details">
+                            <view class="details-list name">
+                                <view catchtap="show" class="details-lists-nowrap" data-id="{{item.ticketInfoId}}">
+                                    <view class="details-nowrap-name">{{item.ticketName}}</view>
+                                </view>
+                            </view>
+                            <view bindtap="show" class="details-list price" data-cardname="{{item.usernameEnabled}}" data-id="{{item.ticketInfoId}}" data-idcardEnable="{{item.idCardEnabled}}" data-money="{{item.platformPrice}}" data-name="{{item.ticketName}}" data-phonenum="{{item.phoneNumberEnabled}}" style="width:200rpx;">
+                                <text style="color:#3399FF"> 购买须知  </text>
+                                <image class="self-right-img" mode="" src="../../images/right-1.png" style=""></image>
+                            </view>
+                            <view class="">
+                                <view catchtap="show" class="info-title" data-id="{{item.ticketInfoId}}">
+                                    <view style="color:#FF3300;display:inline-flex">
+                                        <text style="font-size:20rpx">￥</text>
+                                        <text style="font-size:36rpx;font-weight:bold;font-family:SourceHanSansCN-Normal;">{{item.platformPrice}}</text>
+                                    </view>
+                                    <view style="height:18rpx;line-height:18rpx;display:inline-flex;color:#A6A6A6;font-size:22rpx;padding-left:5px;text-decoration: line-through;font-family:SourceHanSansCN-Normal;font-weight:400">￥ {{item.price}}</view>
+                                </view>
+                                <view style="float:right;margin-top:-26px">
+                                    <view class="list-num" style="color:#999999">已售 {{item.saleNumber==null?0:item.saleNumber}}</view>
+                                    <view bindtap="toPay" class="info-btn" data-cardname="{{item.usernameEnabled}}" data-id="{{item.ticketInfoId}}" data-idcard="{{item.idCardEnabled}}" data-name="{{item.ticketName}}" data-phonenum="{{item.phoneNumberEnabled}}" style="display:block">购买</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="right-item {{tabArr.curBdIndex=='1'?'active':''}}">
+                    <view></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="conceal" class="model-delog self" wx:if="{{flag==1}}">
+        <view class="model-titles">
+            <view class="model-open">
+                <view bindtap="conceal" class="model-notice">
+                    <text>购买须知</text>
+                    <image bindtap="conceal" class="notice-clear" src="../../images/clear.png"></image>
+                </view>
+                <view class="modal-list">
+                    <view>
+                        <form>
+                            <view class=" notice-list">
+                                <view class="txtys">
+                                    <text class="notice-title">预定说明</text>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details">预定时间:</text>
+                                    <view>{{zhihuijingquAppletBuyTicketNotice.noteOrderTime}}</view>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details">有效期:</text>
+                                    <view>{{zhihuijingquAppletBuyTicketNotice.noteValidTime}}</view>
+                                </view>
+                            </view>
+                            <view class=" notice-list">
+                                <view class="txtys">
+                                    <text class="notice-title">费用说明</text>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details">费用包含:</text>
+                                    <view>{{zhihuijingquAppletBuyTicketNotice.noteCostContain}}</view>
+                                </view>
+                            </view>
+                            <view class=" notice-list">
+                                <view class="txtys">
+                                    <text class="notice-title">使用说明</text>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details">使用方法:</text>
+                                    <view>{{zhihuijingquAppletBuyTicketNotice.noteUsageMethod}}</view>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details"> 入园时间:</text>
+                                    <view>{{zhihuijingquAppletBuyTicketNotice.noteStartTime}}--{{zhihuijingquAppletBuyTicketNotice.noteEndTime}}</view>
+                                </view>
+                            </view>
+                            <view class=" notice-list">
+                                <view class="txtys">
+                                    <text class="notice-title">退改规则</text>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details info-line">费用包含:</text>
+                                    <view class="info-line">{{zhihuijingquAppletBuyTicketNotice.noteRefundRule}}</view>
+                                </view>
+                            </view>
+                        </form>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

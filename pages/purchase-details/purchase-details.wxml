@@ -1,0 +1,243 @@
+<view class="pages-all" style="{{flags==1?'position:fixed;':''}}">
+    <view style="width:100%">
+        <view class="PD-title" style="background:#fff;">
+            <view class="PD-ticketName">{{ticketName}}</view>
+            <view bindtap="show" class="PD-buyTicketBtn" data-id="{{id}}">
+                <text style="display:inline-flex"> 购票须知 </text>
+                <image class="notice-right-img" mode="" src="../../images/right-1.png"></image>
+            </view>
+        </view>
+        <view class="details-date">
+            <view>
+                <view class="date-title">使用日期</view>
+                <view class="btn-groups-flex">
+                    <view class="data-btn-flex">
+                        <view class="date-list {{item.flag?'':'gray'}} " wx:for="{{ticketPriceList}}" wx:key="{{index}}">
+                            <view bindtap="clickNum" class="PD-UTD-timeBtn {{num==index?'click-active':'noClick-active'}} " data-dates="{{item.date}}" data-flag="{{item.flag}}" data-id="{{index}}" data-price="{{item.platformPrice}}" size="defaultSize" type="default">
+                                <view class="UTD-time">
+                                    <text wx:if="{{index==0&&item.firstThirdDate}}">今天</text>
+                                    <text wx:if="{{index==1&&item.firstThirdDate}}">明天</text>
+                                    <text wx:if="{{index==2&&item.firstThirdDate}}">后天</text>
+                                    <text>  {{item.dates}}</text>
+                                </view>
+                                <view class="UTD-price" wx:if="{{item.flag}}">￥{{item.platformPrice}}</view>
+                                <view class="UTD-price" wx:else></view>
+                            </view>
+                            <image class="allow-img" src="../../images/allow.png" wx:if="{{num==index}}"></image>
+                        </view>
+                    </view>
+                    <view class="more-btn">
+                        <view bindtap="moreCanlendar" class="PD-UTD-moreTimeBtn" size="defaultSize" style="    display: inline-flex;" type="default">
+                            <text style="display:inline-flex">更多</text>
+                            <image class="more-right-img" mode="" src="../../images/right-1.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view>
+                <view class="PD-buyTicketNumberDiv">
+                    <view class="PD-BTN-name">购票数量</view>
+                    <view class="PD-BTN-content">
+                        <view>
+                            <view bindtap="lessBtnEven" class="countDIV lessBtn" size="mini" style="color:#ABABAD"> — </view>
+                        </view>
+                        <view class="numberDiv">{{ticketNumber}}</view>
+                        <view>
+                            <view bindtap="addBtnEven" class="countDIV lessBtn" size="mini" style="color:#3399FF">+</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="PD-ticketInformation" wx:if="{{showAllEnable}}">
+            <view class="PD-TI-tit">购票信息</view>
+            <view class="info-borders">
+                <view style="border-bottom:1rpx solid #F3F4F7" wx:if="{{usernameEnabled==1}}">
+                    <view class="PD-TI-center">
+                        <text class="PD-TI-header ">姓名</text>
+                        <input bindinput="nameVal" class="PD-TI-footer bottom-line " focus="{{nameFocus}}" name="names" placeholder="请输入姓名" type="text" value="{{names}}"></input>
+                    </view>
+                    <view class="validationInformation" wx:if="{{nameMess!==''}}">{{nameMess}}</view>
+                </view>
+                <view style="border-bottom:1rpx solid #F3F4F7" wx:if="{{phoneNumberEnabled==1}}">
+                    <view class="PD-TI-center">
+                        <text class="PD-TI-header ">手机号</text>
+                        <input bindinput="phoneNumberValidation" class="PD-TI-footer  bottom-line " focus="{{phoneNumberFocus}}" name="phoneNumber" placeholder="请输入手机号" type="number" value="{{phoneNumber}}"></input>
+                    </view>
+                    <view class="validationInformation" wx:if="{{phoneMess!==''}}">{{phoneMess}}</view>
+                </view>
+                <view wx:if="{{idcardEnable==1}}">
+                    <view class="PD-TI-center">
+                        <text class="PD-TI-header ">身份证号</text>
+                        <input bindinput="idCardNumberValidation" class="PD-TI-footer bottom-line " focus="{{IdNumberFocus}}" name="IdNumber" placeholder="请输入身份证号" type="idcard" value="{{IdNumber}}"></input>
+                    </view>
+                    <view class="validationInformation" wx:if="{{idCardMess!==''}}">{{idCardMess}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="PD-useCoupon">
+            <view bindtap="goCoupon" class="PD-UC-conter">
+                <text class="PD-UC-name">优惠券</text>
+                <text class="PD-UC-coupon">暂无可用优惠券</text>
+                <view class="PD-UC-btn">
+                    <image class="coupon-img" mode="" src="../../images/right.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="txtsure order">
+        <view class="model-service" style="">
+            <view style="height:44rpx;line-height:44rpx;">
+                <image class="service-img" mode="widthFix" src="../../images/customer-servic.png"></image>
+            </view>
+            <view style="height:19rpx;line-height:19rpx; margin-top:14rpx;color:#666;font-size:20rpx;">客服</view>
+        </view>
+        <view class="model-total">
+            <text>总额</text>
+            <text class="model-colors">
+                <text style="font-size:20rpx;">  ￥</text>
+                <text style="font-family:SourceHanSansCN-Bold;font-size:36rpx;font-weight:bold">{{moneyTotal}}</text>
+            </text>
+        </view>
+        <view>
+            <view bindtap="detailsShow" class="order-details" data-showid="1">
+                <text style="color:#999999">明细</text>
+                <image class="order-img" mode="" src="../../images/right.png" style=""></image>
+            </view>
+        </view>
+        <view bindtap="detailsPay" class="model-pay" wx:if="{{isCanPay}}">
+                去支付
+            </view>
+        <view class="model-pay" wx:else>
+                去支付
+            </view>
+    </view>
+    <view bindtap="conceal" class="model-delog  details" wx:if="{{flags==1}}">
+        <view class="model-titles">
+            <view class="model-open">
+                <view bindtap="conceal" class="model-notice">
+                    <text>购买须知</text>
+                    <image bindtap="conceal" class="notice-clear" src="../../images/clear.png"></image>
+                </view>
+                <view class="modal-list">
+                    <view style="padding-bottom:49rpx;">
+                        <form>
+                            <view class=" notice-list">
+                                <view class="txtys">
+                                    <text class="notice-title">预定说明</text>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details">预定时间:</text>
+                                    <view>{{zhihuijingquAppletBuyTicketNotice.noteOrderTime}}</view>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details">有效期:</text>
+                                    <view>{{zhihuijingquAppletBuyTicketNotice.noteValidTime}}</view>
+                                </view>
+                            </view>
+                            <view class=" notice-list">
+                                <view class="txtys">
+                                    <text class="notice-title">费用说明</text>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details">费用包含:</text>
+                                    <view>{{zhihuijingquAppletBuyTicketNotice.noteCostContain}}</view>
+                                </view>
+                            </view>
+                            <view class=" notice-list">
+                                <view class="txtys">
+                                    <text class="notice-title">使用说明</text>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details">使用方法:</text>
+                                    <view>{{zhihuijingquAppletBuyTicketNotice.noteUsageMethod}}</view>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details"> 入园时间:</text>
+                                    <view>
+                                        <text>{{zhihuijingquAppletBuyTicketNotice.noteStartTime}}</text>
+                                        <text>--</text>
+                                        <text>{{zhihuijingquAppletBuyTicketNotice.noteEndTime}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class=" notice-list">
+                                <view class="txtys">
+                                    <text class="notice-title">退改规则</text>
+                                </view>
+                                <view class="info-titles">
+                                    <text class="notice-details info-line">费用包含:</text>
+                                    <view class="info-line">{{zhihuijingquAppletBuyTicketNotice.noteRefundRule}}</view>
+                                </view>
+                            </view>
+                        </form>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view catchtap="calendarCancel" wx:if="{{calendar==1}}">
+        <view class="calendar-mores ">
+            <view class="wrap">
+                <view>
+                    <view class="date-show">
+                        <view catchtap="lastMonth" class="lt-arrow">
+                            <image src="../../images/right.png"></image>
+                        </view>
+                        {{year}}年{{month}}月
+                        <view catchtap="nextMonth" class="rt-arrow">
+                            <image src="../../images/right.png"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="header">
+                    <view class="{{index==todayIndex&&isTodayWeek?'weekMark':''}}" wx:for="{{date}}" wx:key="{{item.index}}"> 
+                      {{item}}
+                  </view>
+                </view>
+                <view class="date-box">
+                    <view bindtap="threeDate" class="{{isToday==item.isToday?'nowDay':''}} {{item.weight[item.dateNum-1].flag==false?'pointerDis':'pointerBold'}}" data-date="{{item.isToday}}" data-dates="{{year}}-{{months}}-{{item.dateNums}} " data-flagshow="{{item.dateNum&&item.weight[item.dateNum-1].flag}}" data-id="{{year}}/{{month}}/{{item.dateNum}}" data-index="{{index}}" data-month="{{month}}" data-months="{{months}}" data-num="{{item.dateNum}}" data-price="{{item.weight[item.dateNum-1].platformPrice}}" data-year="{{year}}" hoverClass="{{item.dateNum?'date-blue':''}}" hoverStayTime="5000" wx:for="{{dateArr}}" wx:key="{{item.index}}">
+                        <view class="date-head">
+                            <view>{{item.dateNum}}</view>
+                        </view>
+                        <view class="date-weight">
+                            <view style="height:30px;">
+                                <view>
+                                    <view class="orange-color" wx:if="{{item.dateNum&&item.weight[item.dateNum-1].flag}}">{{item.weight[item.dateNum-1].platformPrice}}</view>
+                                    <view class="orange-color" wx:else></view>
+                                </view>
+                                <view>
+                                    <view class="price-buy" wx:if="{{item.dateNum&&item.weight[item.dateNum-1].flag}}">{{item.weight[item.dateNum-1].price}}</view>
+                                    <view class="price-buy" wx:else></view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="detailsShow" wx:if="{{detailsBooler}}">
+        <view style="position:fixed;top:0;bottom:98rpx;left:0;right:0;background:rgba(0,0,0,0.4)">
+            <view class="footer-details {{detailsBooler?'active-detial':''}}">
+                <view class="list-detail">
+                    <view class="LD-tit">费用明细</view>
+                    <view class="LD-li">
+                        <text class="LD-liName">  {{ticketName}}</text>
+                        <text class="LD-liNumber">
+                            <text style="color:#FF3300">￥ {{price}}</text>
+                        </text>
+                    </view>
+                    <view class="LD-li">
+                        <text class="LD-liName">数量</text>
+                        <text class="LD-liNumber">{{ticketNumber}}</text>
+                    </view>
+                    <view class="LD-footer">
+                        <text style="padding-right:14px;display:inline-block">订单总额:</text>
+                        <text style="color:#FF3300"> ￥{{moneyTotal}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

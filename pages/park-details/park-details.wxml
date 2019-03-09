@@ -1,0 +1,58 @@
+<view class="park-detail">
+    <view class="park-content">
+        <view style="position:relative;z-index:2000">
+            <view class="park-car">
+                <view class="park-car-width">
+                    <image class="park-car-img" mode="" src="../../images/park-car.png"></image>
+                </view>
+                <view class="park-num">
+              {{carNumber}}
+            </view>
+            </view>
+            <view class="park-time">
+                <view class="park-time-in">
+                    <view class="time-in">入园时间</view>
+                    <view class="time-in-date">{{comeTime}}</view>
+                </view>
+                <view class="park-time-out">
+                    <view class="time-in">停车时间</view>
+                    <view class="time-in-date">{{stopTimes}}</view>
+                </view>
+            </view>
+            <view class="park-pay">
+                <view class="park-pay-text">
+                    需支付
+                </view>
+                <view class="park-pay-num">
+                
+                  ￥ <text>{{needPayAmount}}</text>
+                </view>
+            </view>
+            <view class="park-cheap">
+                <view class="park-cheap-feed cheap">
+                    <view class="park-cheap-text">停车费用</view>
+                    <view class="park-cheap-num">{{totalAmount}}</view>
+                </view>
+                <view class="park-cheap-feed coupon">
+                    <view class="park-cheap-text">优惠券</view>
+                    <view class="park-cheap-num">暂无可用优惠券</view>
+                </view>
+                <view class="park-cheap-feed discount">
+                    <view class="park-cheap-text">已优惠</view>
+                    <view class="park-cheap-num feed">{{preferentialAmount}}</view>
+                </view>
+            </view>
+            <view class="park-paymen" wx:if="{{payAmount!='0'}}">
+                <view class="park-paymen-header">
+                    <view class="park-paymen-text">已支付</view>
+                    <view class="park-paymen-num paymen">{{payAmount}}</view>
+                </view>
+            </view>
+            <view class="park-alipay" wx:if="{{needPayAmount!=0}}">
+                <view bindtap="payPark" class="park-alipay-text" wx:if="{{isCanPay}}">支付</view>
+                <view class="park-alipay-text" wx:else>支付</view>
+            </view>
+        </view>
+        <image class="park-img-detail" src="../../images/park-bg.png"></image>
+    </view>
+</view>

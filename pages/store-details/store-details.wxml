@@ -1,0 +1,171 @@
+<view class="pages-all">
+    <view>
+        <view class="order-all">
+            <view class="OD-title">
+                <view class="OD-status">{{status}}</view>
+                <view class="OD-time" wx:if="{{code==0||code==5}}">
+                    <text class="second">{{secondH}}</text>
+                    <text>{{desc}}</text>
+                </view>
+                <view class="OD-code" wx:if="{{code!=0&&code!=5}}">
+                    <text>{{desc}}</text>
+                </view>
+            </view>
+            <view class="store-address num" wx:if="{{code==2}}">
+                <view class="store-header">
+                    <view class="store-lists">
+                        <image class="store-map" mode="widthFix" src="../../images/map.png"></image>
+                    </view>
+                    <view class="store-details">
+                        <view class="details-name">
+                            <text class="names">物流单号</text>
+                            <text style="font-size:24rpx;">{{expressOrderNumber}}</text>
+                            <text bindtap="copyOrderNumber" class="copy">复制</text>
+                        </view>
+                        <view class="address-details">发货7天后将自动收货，若存在货品问题，请拨 打客服电话处理~</view>
+                    </view>
+                </view>
+            </view>
+            <view class="store-address finish" wx:if="{{code==3}}">
+                <view class="store-header">
+                    <view class="store-lists">
+                        <image class="order-map" mode="widthFix" src="../../images/order-list.png"></image>
+                    </view>
+                    <view class="store-details">
+                        <view class="details-name">
+                            <text class="names">订单号</text>
+                            <text style="font-size:24rpx;">{{mallOrderNumber}}</text>
+                            <text bindtap="copymallOrder" class="copy">复制</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="store-address refund" wx:if="{{code==5}}">
+                <view class="store-header">
+                    <view class="store-details">
+                        <view class="details-name">
+                            <text class="names">订单金额</text>
+                            <text class="money">￥{{totalAmount}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="store-desc">
+                    <text class="desc">退款金额</text>
+                    <text class="money">￥{{refundAmount}}</text>
+                </view>
+            </view>
+            <view class="store-address" wx:if="{{code==0||code==1||code==4||code==5}}">
+                <view class="store-header">
+                    <view class="store-lists">
+                        <image class="store-map" mode="widthFix" src="../../images/map.png"></image>
+                    </view>
+                    <view class="store-details">
+                        <view class="details-name">
+                            <text class="names">{{buyerUsername}}</text>
+                            <text>{{buyerPhoneNumber}}</text>
+                        </view>
+                        <view class="address-details"> {{buyerAddress}}</view>
+                    </view>
+                </view>
+                <view class="store-desc" style="padding-bottom:5px;display:flex;">
+                    <view class="desc" style="width:100rpx;padding-right:0">备注：</view>
+                    <view style="flex:1;line-height:36rpx;overflow:hidden;text-overflow:ellipsis;">{{remark}}</view>
+                </view>
+            </view>
+            <view class="store-address code" wx:if="{{code==2||code==3}}">
+                <view class="store-header">
+                    <view class="store-lists">
+                        <image class="store-map" mode="widthFix" src="../../images/map.png"></image>
+                    </view>
+                    <view class="store-details">
+                        <view class="details-name">
+                            <text class="names">{{buyerUsername}}</text>
+                            <text>{{buyerPhoneNumber}}</text>
+                        </view>
+                        <view class="address-details"> {{buyerAddress}}</view>
+                    </view>
+                </view>
+                <view class="store-desc" style="padding-bottom:5px;display:flex;">
+                    <view class="desc" style="width:100rpx;padding-right:0">备注：</view>
+                    <view style="flex:1;line-height:36rpx">{{remark}}</view>
+                </view>
+            </view>
+            <view class="info-details">
+                <view class="info-name">
+                    <view class="details-img">
+                        <image class="img" mode="" src="{{goodsPicture}}"></image>
+                    </view>
+                    <view class="info-item">
+                        <view class="info-list">{{goodsName}}</view>
+                        <view class="info-price">
+                            <view class="price-num">￥{{price}}</view>
+                            <text class="price-total"></text>
+                        </view>
+                    </view>
+                </view>
+                <view class="details-num">
+                    <view class="num-total">数量</view>
+                    <view class="num-all">x{{totalGoodsCount}}</view>
+                </view>
+                <view class="details-num price">
+                    <view class="num-total">单价</view>
+                    <view class="num-all">¥{{price}}</view>
+                </view>
+                <view class="details-num cash">
+                    <view class="num-total">运费</view>
+                    <view class="num-all">¥{{expressAmount}}</view>
+                </view>
+                <view class="details-num total">
+                    <view class="num-total">合计</view>
+                    <view class="num-all">¥{{totalAmount}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="PD-footerDiv store" wx:if="{{code==0}}">
+            <view class="PD-FD-amount">
+                <view class="amount-tit">
+                    <text>合计</text>
+                </view>
+                <view class="amount-number">
+                    <view style="font-size:20rpx;display:inline-flex">￥</view>
+                    <view style="font-weight:bold;font-size:36rpx;font-family:SourceHanSansCN-Normal;display:inline-flex">
+                       {{totalAmount}}
+                    </view>
+                </view>
+            </view>
+            <view bindtap="continu" class="pay-store" wx:if="{{isCanPay}}">
+                <view>去支付</view>
+            </view>
+            <view class="pay-store" wx:else>
+                <view>去支付</view>
+            </view>
+        </view>
+        <view bindtap="confirmDialog" class="PD-footerDiv shop" wx:if="{{code==2}}">
+            <view class="shop-pay">确认收货</view>
+        </view>
+    </view>
+    <view class="second-diaolg" wx:if="{{showConfirm}}">
+        <view class="second-title">
+            <view class="second-header">
+                <text>是否确认收货</text>
+            </view>
+            <view class="second-btns">
+                <view bindtap="cancelConfirm" class="second-save">返回</view>
+                <view bindtap="confirm" class="second-save"> 确定</view>
+            </view>
+        </view>
+    </view>
+    <view class="pay-diaolg" wx:if="{{payShow}}">
+        <view class="pay-title">
+            <view class="pay-header">
+                <text>
+                            {{buySuccessMessage}}
+
+                        </text>
+            </view>
+            <view class="second-btns pay">
+                <view bindtap="payBack" class="second-save">确定</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,94 @@
+<view class="buy">
+    <view class="buy-header">
+        <view class="header-name">
+            <view class="img-desc">
+                <image class="img" mode="widthFix" src="{{goodsPicture}}"></image>
+            </view>
+            <view class="header-desc">
+                <view class="desc-list"> {{goodsName}}</view>
+                <view class="desc-price">
+                    <view class="price-num">￥{{goodsPrice}}</view>
+                    <view class="price-total">已售{{saleCount}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="header-express">
+            <view class="express-title">快递费用</view>
+            <view class="express-price" wx:if="{{expressCostType==0}}">包邮</view>
+            <view class="express-price" wx:if="{{expressCostType==1}}">{{expressAmount}}元</view>
+        </view>
+        <view class="header-num">
+            <view class="num-name">购买数量</view>
+            <view class="num-edite">
+                <view bindtap="addBtnEven" class="less add" size="mini"> + </view>
+                <view class="number-less">{{numberTotal}}</view>
+                <view bindtap="lessBtnEven" class=" less " size="mini"> - </view>
+            </view>
+        </view>
+        <view class="header-total">
+            <text>合计：</text>
+            <text class="total">￥{{moneyTotal}}</text>
+        </view>
+    </view>
+    <view class="buy-info">
+        <view class="inf0-map">
+            <view class="map">
+                <image class="info-img" mode="widthFix" src="../../images/map.png"></image>
+            </view>
+            <view class="info-header">
+        收货人信息
+      </view>
+        </view>
+        <view>
+            <view class="info-list">
+                <view style="border-bottom:1px solid #f3f4f7">
+                    <view class="info-name">
+                        <view class="name-list">收货人</view>
+                        <input bindinput="nameVal" class="input-details " focus="{{nameFocus}}" name="names" placeholder="请输入收货人姓名" type="text" value="{{names}}"></input>
+                    </view>
+                    <view class="valider" wx:if="{{nameMess!==''}}">{{nameMess}}</view>
+                </view>
+                <view style="border-bottom:1px solid #f3f4f7">
+                    <view class="info-name">
+                        <view class="name-list">联系方式</view>
+                        <input bindinput="phoneNumberValidation" class="input-details " focus="{{phoneNumberFocus}}" name="phoneNumber" placeholder="请输入收货人手机号" type="number" value="{{phoneNumber}}"></input>
+                    </view>
+                    <view class="valider" wx:if="{{phoneMess!==''}}">{{phoneMess}}</view>
+                </view>
+                <view style="border-bottom:1px solid #f3f4f7">
+                    <view class="info-name">
+                        <view class="name-list">收货地址</view>
+                        <picker bindchange="bindRegionChange" customItem="{{customItem}}" mode="region" value="{{region}}">
+                            <view class="picker">
+                                  {{region[0]}}，{{region[1]}}，{{region[2]}}
+                                </view>
+                        </picker>
+                    </view>
+                </view>
+                <view style="border-bottom:1px solid #f3f4f7">
+                    <view class="info-name">
+                        <view class="name-list">详细地址</view>
+                        <input bindinput="details" class="input-details " focus="{{IdNumberFocus}}" name="details" placeholder="请输入具体收货地址" value="{{details}}"></input>
+                    </view>
+                    <view class="valider" wx:if="{{detailsMess!==''}}">{{detailsMess}}</view>
+                </view>
+                <view>
+                    <view class="info-name title">
+                        <view class="name-list">备注</view>
+                        <textarea bindblur="textareaVal" class="textarea-item" cursorSpacing="0" disabled="{{disabled}}" maxlength="50" name="content" placeholder="输入给商家留言" value="{{content}}"></textarea>
+                    </view>
+                </view>
+            </view>
+            <view style="position:relative;bottom:0;left:0;width:100%;">
+                <image class="border-bottom" mode="widthFix" src="../../images/border-bottom.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="buy-pay">
+        <view class="total">
+            <text>合计：</text>
+            <text class="money">￥{{moneyTotal}}</text>
+        </view>
+        <view bindtap="createPay" class="pay-title">立即购买</view>
+    </view>
+</view>

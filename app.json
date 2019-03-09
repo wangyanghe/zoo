@@ -1,0 +1,64 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/self-tricket/self",
+        "pages/purchase-details/purchase-details",
+        "pages/my-coupon/my-coupon",
+        "pages/guid/guid",
+        "pages/notice/notice",
+        "pages/notice-details/notice-details",
+        "pages/notice-guid/notice-guid",
+        "pages/Ai/Ai",
+        "pages/info/info",
+        "pages/order-list/order-list",
+        "pages/rate/rate",
+        "pages/park/park",
+        "pages/park-details/park-details",
+        "pages/park-delay/park-delay",
+        "pages/input/input",
+        "pages/scenic-details/scenic-details",
+        "pages/order-details/order-details",
+        "pages/scenic/scenic",
+        "pages/rich-active/rich-active",
+        "pages/banner-jamp/banner-jamp",
+        "pages/featured-mall/featured-mall",
+        "pages/featured-details/featured-details",
+        "pages/featured-buy/featured-buy",
+        "pages/featured-active/featured-active",
+        "pages/store-details/store-details",
+        "pages/map-navigation/map-navigation",
+        "pages/map-guide/map-guide"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "textColor": "#666666",
+        "selectedColor": "#66CCCC",
+        "backgroundColor": "#FFF",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/home.png",
+                "selectedIconPath": "images/home-1.png"
+            },
+            {
+                "pagePath": "pages/order-list/order-list",
+                "text": "订单",
+                "iconPath": "images/list-0.png",
+                "selectedIconPath": "images/list-0-1.png"
+            },
+            {
+                "pagePath": "pages/info/info",
+                "text": "我的",
+                "iconPath": "images/my-0.png",
+                "selectedIconPath": "images/my-1.png"
+            }
+        ]
+    }
+}

@@ -1,0 +1,268 @@
+page {
+    background: #F5F7FB;
+}
+
+.jumpbtn {
+    border: 1rpx solid black;
+    padding: 20rpx;
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+
+.info-bg {
+    width: 100%;
+    height: 254rpx;
+    position: relative;
+}
+
+.info-image-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.info-lists {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.info-user {
+    text-align: center;
+    z-index: 2000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -150rpx;
+    margin-top: -91rpx;
+}
+
+.info-nice {
+    margin-top: 24rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #fff;
+}
+
+.info-user-name {
+    width: 114rpx;
+    height: 114rpx;
+    border-radius: 50%;
+}
+
+.cheap {
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    margin-bottom: 30rpx;
+    margin-top: -30rpx;
+    border-radius: 20rpx;
+    background: #fff;
+    box-shadow: 0px 0px 15px 0px rgba(0,102,255,0.2);
+    height: 140rpx;
+    line-height: 140rpx;
+    display: flex;
+    padding-left: 0.42rem;
+    padding-right: 0.4rem;
+}
+
+.cheap-img {
+    width: 56rpx;
+    height: 60rpx!important;
+    background-size: 100%;
+    vertical-align: -10px;
+}
+
+.cheap-text {
+    color: #333333;
+    font-size: 30rpx;
+    font-weight: bold;
+    flex: 1;
+    padding-left: 23rpx;
+}
+
+.cheap-right {
+    width: 14rpx;
+    float: right;
+}
+
+.cheap-right-img {
+    width: 14rpx;
+    height: 24rpx!important;
+    background-size: 100%;
+    vertical-align: -4px;
+}
+
+.cheap-list {
+}
+
+.tab-top {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 162rpx;
+    padding-right: 162rpx;
+}
+
+.tab-top .top-order,.tab-top .top-stop {
+    display: inline-flex;
+    width: 50%;
+    justify-content: center;
+}
+
+.tab-bottom .order,.tab-bottom .stop {
+    display: none;
+}
+
+.tab-bottom .order.active,.tab-bottom .stop.active {
+    display: block;
+}
+
+.tab-top,.tab-bottom {
+    width: 100%;
+}
+
+.top-order .text,.top-stop .text {
+    color: #999999;
+    font-size: 30rpx;
+}
+
+.top-order.active text,.top-stop.active .text {
+    color: #333333;
+    font-size: 30rpx;
+}
+
+.top-order .border-width,.top-stop .border-width {
+    width: 25rpx;
+    height: 4rpx;
+    background: #fff;
+    border-radius: 2rpx;
+    display: block;
+    margin: 0 auto;
+    margin-top: 31rpx;
+}
+
+.top-order.active .border-width,.top-stop.active .border-width {
+    background: #33CCCC;
+}
+
+.order-list-btn {
+    padding-top: 66rpx;
+    padding-left: 162rpx;
+    padding-right: 169rpx;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.order-list-top {
+    padding-bottom: 136rpx;
+}
+
+.icon-btn {
+    text-align: center;
+}
+
+.icon-btn-sale {
+    width: 60rpx;
+    height: 60rpx!important;
+    margin-bottom: 20rpx;
+    background-size: 100%;
+}
+
+.icon-btn-pay {
+    width: 60rpx;
+    height: 60rpx!important;
+    margin-bottom: 20rpx;
+    background-size: 100%;
+}
+
+.icon-btn-finish {
+    width: 60rpx;
+    height: 60rpx!important;
+    margin-bottom: 20rpx;
+    background-size: 100%;
+}
+
+.icon-btn-go {
+    width: 60rpx;
+    height: 60rpx!important;
+    margin-bottom: 20rpx;
+    background-size: 100%;
+}
+
+.icon-btn-go.finish {
+    width: 60rpx;
+    height: 60rpx!important;
+}
+
+.ticket-content {
+    color: #fff;
+}
+
+.order-list-top:before,.order-list-top:after,.order-list-bottom:before,.order-list-bottom:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+
+.jumpbtn {
+    border: 1rpx solid black;
+    padding: 20rpx;
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+
+.user-infos {
+    width: 300rpx;
+}
+
+button.user-infos {
+    line-height: 40rpx;
+    padding: 0 0 10rpx;
+    background-color: transparent;
+    border-color: transparent;
+    border: none;
+}
+
+.show-user {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-left: 30rpx;
+}
+
+.info-order {
+    height: 270rpx;
+    background: #fff;
+    margin: 30rpx;
+    box-shadow: 0px 8rpx 15rpx 0rpx rgba(190,190,190,0.15);
+    border-radius: 10rpx;
+    border: 1rpx solid #fff;
+}
+
+.order-header {
+    width: 100%;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-bottom: 1rpx solid #F3F4F7;
+    font-size: 32rpx;
+    font-family: SourceHanSansCN-Medium;
+    font-weight: 500;
+    padding-left: 40rpx;
+    box-sizing: border-box;
+}
+
+.order-title {
+    padding: 30rpx 19rpx 49rpx 40rpx;
+    width: 100%;
+    box-sizing: border-box;
+    height: 182rpx;
+}
+
+.order-width {
+    width: 25%;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+}

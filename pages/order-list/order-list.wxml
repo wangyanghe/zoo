@@ -1,0 +1,190 @@
+<view class="order-tab">
+    <view class="tab">
+        <view class="tab-left order">
+            <view bindtap="tabFun" class="first {{tabArr.curHdIndex=='0'?'active':''}}" data-id="0">
+                <view> 购票订单</view>
+            </view>
+            <view bindtap="tabFun" class="first {{tabArr.curHdIndex=='1'?'active':''}}" data-id="1"> 
+              停车订单
+            </view>
+            <view bindtap="tabFun" class="first {{tabArr.curHdIndex=='2'?'active':''}}" data-id="2"> 
+              商城
+            </view>
+        </view>
+        <view class="tab-right order">
+            <view class="right-item {{tabArr.curBdIndex=='0'?'active':''}}">
+                <view class="img-list-order" wx:for="{{ticketOrderList}}" wx:key="{{item.index}}">
+                    <view bindtap="goOrderDetails" class="pay-title" data-code="{{item.ticketOrderStatus}}" data-id="{{item.ticketOrderId}}">
+                        <view class="pay-left">订单号：{{item.ticketOrderNumber}}</view>
+                        <view class="pay-status" wx:if="{{item.ticketOrderStatus==1}}">
+                 预定成功
+                 </view>
+                        <view class="pay-status" wx:if="{{item.ticketOrderStatus==0}}">
+                 待付款
+                 </view>
+                        <view class="pay-status" wx:if="{{item.ticketOrderStatus==2}}">
+                 退单审核中
+                 </view>
+                        <view class="pay-status" wx:if="{{item.ticketOrderStatus==3}}">
+                 已退单
+                 </view>
+                        <view class="pay-status" wx:if="{{item.ticketOrderStatus==4}}">
+                 已关闭
+                 </view>
+                    </view>
+                    <view bindtap="goOrderDetails" class="pay-buy-items" data-code="{{item.ticketOrderStatus}}" data-id="{{item.ticketOrderId}}">
+                        <image class="pay-images" mode="" src="{{item.pictureUrl}}"></image>
+                        <view class="pay-ticket-details">
+                            <view class="ticket-name {{item.ticketOrderStatus==4?'closed':''}} ">
+                                <text>{{item.ticketName}}</text>
+                            </view>
+                            <view class="ticket-date">
+                                <view style="flex:1">
+                                    <view class="date-bg date">{{item.playDate}}</view>
+                                    <view class="date-bg" style="diaplay:inline-block">
+                                        <text class="count-left"> {{item.totalTicketCount}}张</text>
+                                    </view>
+                                </view>
+                                <view style="color:{{item.ticketOrderStatus==4?'#999999':'#FF4F32'}}">
+                                    <view style="font-size:36rpx;font-weight:bold;font-family:SourceHanSansCN-Medium">
+                                        <text style="font-size:20rpx">￥</text>
+                        {{item.amount}}
+                        </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="line-btn">
+                        <view>
+                            <view class="ticket-btn" wx:if="{{item.ticketOrderStatus==0}}">
+                                <text bindtap="cancelDiaolg" class="btn-text cancel" data-id="{{item.ticketOrderId}}">取消</text>
+                                <text bindtap="payMoney" class="btn-text" data-id="{{item.ticketOrderId}}" data-prePayData="{{item.prePayData}}" style="background:#3399FF;color:#fff" wx:if="{{isCanPay}}">去支付</text>
+                                <text class="btn-text" data-id="{{item.ticketOrderId}}" data-prePayData="{{item.prePayData}}" style="background:#3399FF;color:#fff" wx:else>支付中</text>
+                            </view>
+                            <view class="ticket-btn" wx:if="{{item.ticketOrderStatus==2}}">
+                                <text bindtap="autDiaolog" class="btn-text cancel" data-id="{{item.ticketOrderId}}">取消申请</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="right-item {{tabArr.curBdIndex=='1'?'active':''}}">
+                <view class="img-list-order order-park" wx:for="{{parkInforList}}" wx:key="{{item.index}}">
+                    <view class="pay-title">
+                        <view class="pay-left">订单号：{{item.parkOrderNumber}}</view>
+                        <view class="pay-status" wx:if="{{item.status==1}}">
+                      支付成功
+                      <image class="list-details-images" mode="" src="../../images/right-1.png"></image>
+                        </view>
+                        <view class="pay-status" wx:if="{{item.paymentStatus==0}}">
+                      待付款
+                      <image class="list-details-images" mode="" src="../../images/right-1.png"></image>
+                        </view>
+                        <view class="pay-status" wx:if="{{item.status==2}}">
+                  停留超时
+                  <image class="list-details-images" mode="" src="../../images/right-1.png"></image>
+                        </view>
+                    </view>
+                    <view class="pay-buy-items">
+                        <image class="pay-images" mode="" src="../../images/ticket-stop.png"></image>
+                        <view class="pay-ticket-details">
+                            <view class="ticket-name">
+                                <text>车牌号：</text>
+                                <text>{{item.carNumber}}</text>
+                            </view>
+                            <view class="ticket-date">
+                   入场时间：
+                    <text>{{item.comeTime}}</text>
+                            </view>
+                            <view class="ticket-amount">
+                                <view class="order-park-amount">
+                                    <text>订单金额:</text>
+                                    <text class="num">{{item.totalAmount}}</text>
+                                </view>
+                                <view bindtap="pariDetails" class="order-park-detail" data-id="{{item.parkOrderId}}">
+                        详情
+                          <image class="list-details-images" mode="" src="../../images/right-1.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="right-item {{tabArr.curBdIndex=='2'?'active':''}}">
+                <view bindtap="goStoreDetails" class="img-list-order" data-code="{{item.mallOrderStatus}}" data-id="{{item.orderId}}" wx:for="{{storelist}}" wx:key="{{index}}">
+                    <view class="pay-title">
+                        <view class="pay-left">订单号：{{item.mallOrderNumber}}</view>
+                        <view class="pay-status" wx:if="{{item.mallOrderStatus==1&&item.expressStatus==1}}">
+                 待发货
+                 </view>
+                        <view class="pay-status" wx:if="{{item.mallOrderStatus==1&&item.expressStatus==2}}">
+                 已发货
+                 </view>
+                        <view class="pay-status" wx:if="{{item.mallOrderStatus==1&&item.expressStatus==3}}">
+                 已完成
+                 </view>
+                        <view class="pay-status" wx:if="{{item.mallOrderStatus==0}}">
+                 待付款
+                 </view>
+                        <view class="pay-status" wx:if="{{item.mallOrderStatus==2}}">
+                 退单审核中
+                 </view>
+                        <view class="pay-status" wx:if="{{item.mallOrderStatus==3}}">
+                 已退单
+                 </view>
+                        <view class="pay-status" wx:if="{{item.mallOrderStatus==4}}">
+                 已关闭
+                 </view>
+                        <view class="pay-status" wx:if="{{item.mallOrderStatus==5}}">
+                 退单中
+                 </view>
+                    </view>
+                    <view class="pay-buy-items">
+                        <image class="pay-images" mode="" src="{{item.orderGoodsList[0].goodsPictrue}}"></image>
+                        <view class="pay-ticket-details">
+                            <view class="ticket-name">
+                                <text>{{item.orderGoodsList[0].goodsName}}</text>
+                            </view>
+                            <view style="display:flex;height:30rpx;line-height:30rpx">
+                                <view class="store-num">
+                                    <view style="font-size:20rpx;display:inline-flex">X</view>
+                                    <view class="count-left" style="display:inline-flex">
+                         {{item.orderGoodsList[0].count}}
+                         </view>
+                                </view>
+                                <view class="ticket-amount" style="flex:1">
+                                    <text style="font-size:20rpx;color:#FF4F32">￥</text>
+                                    <text class="num" style="font-size:36rpx;font-family:SourceHanSansCN-Bold;font-weight:bold;">{{item.totalAmount}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="auth-diaolg" wx:if="{{cancelDiaolg}}">
+            <view class="auth-title">
+                <view class="auth-header">
+                    <text>是否确认取消订单</text>
+                </view>
+                <view class="auth-btns">
+                    <view bindtap="secondBackList" class="auth-save">返回</view>
+                    <view bindtap="cancel" class="auth-save" data-id="{{ids}}" wx:if="{{isCanPlay}}"> 确定</view>
+                    <view class="auth-save" wx:else> 确定</view>
+                </view>
+            </view>
+        </view>
+        <view class="auth-diaolg" wx:if="{{authDiaolg}}">
+            <view class="auth-title">
+                <view class="auth-header">
+                    <text>是否确认取消申请</text>
+                </view>
+                <view class="auth-btns">
+                    <view bindtap="secondBackList" class="auth-save">返回</view>
+                    <view bindtap="authCancel" class="auth-save" data-id="{{ids}}" wx:if="isCanPlay"> 确定</view>
+                    <view class="auth-save" wx:else> 确定</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

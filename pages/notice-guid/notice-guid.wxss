@@ -1,0 +1,29 @@
+.amap-container {
+    width: 100vw!important;
+    height: 100vh!important;
+}
+
+.position-left {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: #fff;
+    width: 200rpx;
+    height: 300rpx;
+    overflow-y: auto;
+    margin-top: -150rpx;
+}
+
+.position-item {
+    margin: 20rpx;
+}
+
+.selected {
+    color: red;
+    background: green;
+}
+
+.notice-guid-map {
+    width: 100%!important;
+    height: 100vh!important;
+}

@@ -1,0 +1,14 @@
+<view class="swiper-tab-temp"></view>
+<view style="width:100%">
+  <swiper autoplay="{{true}}" bindchange="bindChange" class="swiper-box" current="{{currentTab}}" duration="300" style="height:600px">
+    <swiper-item style="background-color:red">
+      红色内容
+    </swiper-item>
+    <swiper-item style="background-color:green">
+      绿色内容
+    </swiper-item>
+    <swiper-item style="background-color:yellow">
+      黑色内容
+    </swiper-item>
+  </swiper>
+</view>
